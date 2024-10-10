@@ -1,10 +1,10 @@
-import styles from "./ChooseFraction.module.scss";
-
 import cardElf from "../../assets/cards-back/elfs.png";
 import cardMonster from "../../assets/cards-back/monsters.png";
 import cardNilfgaard from "../../assets/cards-back/nilfgaard.png";
-import cardSkellige from "../../assets/cards-back/skelige.png";
 import cardNorth from "../../assets/cards-back/north.png";
+import cardSkellige from "../../assets/cards-back/skelige.png";
+
+import styles from "./ChooseFraction.module.scss";
 
 
 

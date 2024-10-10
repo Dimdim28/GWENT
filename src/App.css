@@ -1,42 +1,44 @@
+:root {
+  --app-height: 100%;
+  --vwh: calc(1vw + 1vh);
+  --transition-time: 0.3s;
+
+  --title-green-color: #01D684
+}
+
+@font-face {
+  font-family: 'Gwent';
+  src: url('./assets/hinted-GWENT-ExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
+}
+
+html,
+body {
+  display: block;
+  position: relative;
+  height: var(--app-height);
+  width: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  height: var(--app-height);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+* {
+  margin: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+h2 {
+  font-family: 'Gwent', sans-serif;
 }

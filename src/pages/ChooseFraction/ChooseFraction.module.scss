@@ -13,7 +13,7 @@
     content: '';
     background-image: url('../../assets/background/background-1.jpg');
     background-size: cover;
-    filter: brightness(0.5);
+    filter: brightness(0.4);
     position: absolute;
     left: 0;
     top: 0;
@@ -34,8 +34,15 @@
 
 .title {
   font-size: calc(var(--vwh) * 3);
-  color: var(--title-green-color);
   margin-bottom: calc(var(--vwh) * 2);
+  background-image: linear-gradient(
+    to right,
+    var(--bg-yellow-text),
+    var(--bg-orange-text)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
 }
 
 .cards {

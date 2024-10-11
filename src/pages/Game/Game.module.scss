@@ -5,3 +5,80 @@
   gap: 20px;
   margin-top: 100px;
 }
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  position: relative;
+
+  &::before {
+    content: '';
+    background-image: url('../../assets/background/background-8.png');
+    background-size: cover;
+    filter: brightness(0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.userInfo {
+  display: flex;
+
+  &.enemy {
+    position: absolute;
+    right: calc(var(--vwh) * 1);
+    top: calc(var(--vwh) * 1);
+  }
+
+  &.player {
+    position: absolute;
+    left: calc(var(--vwh) * 1);
+    bottom: calc(var(--vwh) * 1);
+  }
+
+  .fractionIcon {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(var(--vwh) * 0.4) 0;
+
+    .role {
+      background-image: linear-gradient(
+        to right,
+        var(--bg-yellow-text),
+        var(--bg-orange-text)
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      font-size: 30px;
+    }
+
+    .points {
+      color: var(--title-white-color);
+      font-size: 16px;
+    }
+  }
+}

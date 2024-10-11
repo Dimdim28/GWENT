@@ -5,6 +5,9 @@
 
   --title-green-color: #01D684;
   --border-green-color: rgb(17, 255, 184);
+
+  --title-white-color: #ffffff;
+
   --bg-orange-text: rgb(226, 167, 62);
   --bg-yellow-text: rgb(250, 223, 122);
   --bg-yellow-etxt-second: rgb(232, 181, 77);
@@ -49,6 +52,13 @@ body {
   box-sizing: border-box;
 }
 
-h2 {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+b {
   font-family: 'Gwent', sans-serif;
 }

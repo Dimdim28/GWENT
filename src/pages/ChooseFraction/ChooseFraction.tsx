@@ -1,24 +1,43 @@
-import cardElf from '../../assets/cards-back/elfs.png';
-import cardMonster from '../../assets/cards-back/monsters.png';
-import cardNilfgaard from '../../assets/cards-back/nilfgaard.png';
-import cardNorth from '../../assets/cards-back/north.png';
-import cardSkellige from '../../assets/cards-back/skelige.png';
+import { FRACTIONS } from '../../constants/fractions';
+import { useGameStore } from '../../store/game/game.store';
 
 import styles from './ChooseFraction.module.scss';
 
+function getRandomInt(min: number, max: number) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 export const ChooseFraction = () => {
+  const { startGame, setUserFraction, setEnemyFraction } = useGameStore();
+
+  const getRandomFraction = () =>
+    FRACTIONS[getRandomInt(0, FRACTIONS.length - 1)].name;
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <h2 className={styles.title}>Choose Fraction</h2>
         <div className={styles.cards}>
-          {[cardElf, cardMonster, cardSkellige, cardNilfgaard, cardNorth].map(
-            (el, id) => (
-              <div key={id} className={styles.card}>
-                <img draggable="false" src={el} width="340" height="475" />
-              </div>
-            ),
-          )}
+          {FRACTIONS.map((fraction, id) => (
+            <div
+              key={id}
+              className={styles.card}
+              onClick={() => {
+                startGame();
+                setUserFraction(fraction.name);
+                setEnemyFraction(getRandomFraction());
+              }}
+            >
+              <img
+                draggable="false"
+                src={fraction.back}
+                width="340"
+                height="475"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

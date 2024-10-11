@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { Hero, Turn } from '../../types/general';
+import { Fraction, Hero, Turn } from '../../types/general';
 
 import {
   attackCardAction,
@@ -40,7 +40,11 @@ const initialGameData: {
 
 export const useGameStore = create<GameStore>((set, get) => ({
   ...initialGameData,
-  startGame: () => set(initialGameData),
+  startGame: () => set({ ...initialGameData, isGameStarted: true }),
+  setUserFraction: (fraction: Fraction) =>
+    set((state) => ({ player: { ...state.player, fraction } })),
+  setEnemyFraction: (fraction: Fraction) =>
+    set((state) => ({ enemy: { ...state.enemy, fraction } })),
   endGame: () => {},
   playCard: (cardId: number) => {
     set((state) => PlayCardAction(state, cardId));

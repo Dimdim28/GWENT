@@ -1,4 +1,4 @@
-import { Hero, Turn } from '../../types/general';
+import { Fraction, Hero, Turn } from '../../types/general';
 
 export interface GameStore {
   player: Hero;
@@ -10,4 +10,6 @@ export interface GameStore {
   endTurn: () => void;
   playCard: (cardId: number) => void;
   attackCard: (attacker: number, target: number) => void;
+  setUserFraction: (fraction: Fraction) => void;
+  setEnemyFraction: (fraction: Fraction) => void;
 }

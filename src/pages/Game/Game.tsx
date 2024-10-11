@@ -1,11 +1,14 @@
-import Card from '../../components/card/Card';
+// import Card from '../../components/card/Card';
+
+import { useGameStore } from '../../store/game/game.store';
 
 export const Game = () => {
+  const { player, enemy } = useGameStore();
+
   return (
     <div>
-      {[1, 2, 3, 4, 5].map((el) => (
-        <Card key={el} />
-      ))}
+      <p>player - {player.fraction}</p>
+      <p>enemy - {enemy.fraction}</p>
     </div>
   );
 };

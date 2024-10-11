@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
 
+import { useGameStore } from './store/game/game.store';
 import { ChooseFraction, Game } from './pages';
 
 import './App.css';
 
 function App() {
+  const { isGameStarted } = useGameStore();
+
   const updateAppHeight = () => {
     const doc = document.documentElement;
     doc.style.setProperty('--app-height', `${window.innerHeight}px`);
@@ -24,12 +27,7 @@ function App() {
     };
   }, []);
 
-  return (
-    <>
-      {/* <ChooseFraction /> */}
-      <Game />
-    </>
-  );
+  return <>{isGameStarted ? <Game /> : <ChooseFraction />}</>;
 }
 
 export default App;

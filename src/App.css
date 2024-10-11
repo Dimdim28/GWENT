@@ -3,7 +3,11 @@
   --vwh: calc(1vw + 1vh);
   --transition-time: 0.3s;
 
-  --title-green-color: #01D684
+  --title-green-color: #01D684;
+  --border-green-color: rgb(17, 255, 184);
+  --bg-orange-text: rgb(226, 167, 62);
+  --bg-yellow-text: rgb(250, 223, 122);
+  --bg-yellow-etxt-second: rgb(232, 181, 77);
 }
 
 @font-face {
@@ -14,12 +18,18 @@
   font-style: normal;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+  border: none;
+}
+
 html,
 body {
   display: block;
   position: relative;
   height: var(--app-height);
   width: 100%;
+  background: black;
 }
 
 body {

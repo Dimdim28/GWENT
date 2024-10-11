@@ -16,6 +16,12 @@
   transition: transform 0.6s ease; /* Smooth transition for the flip */
 }
 
+// .cardContainer:hover {
+//   .front::after {
+//     opacity: 1;
+//   }
+// }
+
 .cardContainer:hover .card {
   transform: rotateY(180deg);
 }
@@ -93,6 +99,26 @@
   background-size: cover;
 }
 
+.front::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: calc(100% - 4px);
+  height: calc(100% - 2px);
+  z-index: 10;
+  opacity: 0;
+  margin: auto;
+  border-style: solid;
+  border-image: none 100% / 1 / 0 stretch;
+  border-width: 2px;
+  border-color: var(--border-green-color);
+  border-radius: 4px;
+  transition: opacity var(--transition-time) ease-in-out;
+}
+
 .front .power .powerText {
   font-size: 16px;
   margin: -2px 1px 0px 0px;
@@ -137,11 +163,11 @@
   position: relative;
   z-index: 4;
 
-  color: rgb(226, 167, 62);
+  color: var(--bg-orange-text);
   background-image: linear-gradient(
     to right,
-    rgb(250, 223, 122),
-    rgb(226, 167, 62)
+    var(--bg-yellow-text),
+    var(--bg-orange-text)
   );
   background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -2,7 +2,12 @@ import { create } from 'zustand';
 
 import { Hero, Turn } from '../../types/general';
 
-import { createDeck } from './functions';
+import {
+  attackCardAction,
+  createDeck,
+  endTurnAction,
+  PlayCardAction,
+} from './functions';
 import { GameStore } from './game.types';
 
 const initialPlayerState: Hero = {
@@ -33,11 +38,17 @@ const initialGameData: {
   isGameStarted: false,
 };
 
-export const useGameStore = create<GameStore>((set) => ({
+export const useGameStore = create<GameStore>((set, get) => ({
   ...initialGameData,
   startGame: () => set(initialGameData),
   endGame: () => {},
-  playCard: () => {},
-  attackCard: () => {},
-  endTurn: () => {},
+  playCard: (cardId: number) => {
+    set((state) => PlayCardAction(state, cardId));
+  },
+  attackCard: (attackerId: number, targetId: number) => {
+    set((state) => attackCardAction(state, attackerId, targetId));
+  },
+  endTurn: () => {
+    set(endTurnAction(get));
+  },
 }));

@@ -1,4 +1,4 @@
-import { GameCard, Hero, Turn } from '../../types/general';
+import { Hero, Turn } from '../../types/general';
 
 export interface GameStore {
   player: Hero;
@@ -8,6 +8,6 @@ export interface GameStore {
   isGameStarted: boolean;
   startGame: () => void;
   endTurn: () => void;
-  playCard: (card: GameCard) => void;
+  playCard: (cardId: number) => void;
   attackCard: (attacker: number, target: number) => void;
 }

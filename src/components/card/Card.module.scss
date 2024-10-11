@@ -1,0 +1,147 @@
+.cardContainer {
+  //   position: absolute;
+  //   left: 50%;
+  //   top: 50%;
+  //   transform: translate(-50%, -50%) scale(2);
+  width: 120px;
+  height: 180px;
+  perspective: 180px;
+}
+
+.card {
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.side {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front {
+  width: 120px;
+  height: 180px;
+  transform: translateZ(1px);
+}
+
+.front .character {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  /* background-image: url('./saskia.jpg'); */
+  background-image: url('./front.gif');
+  background-size: cover;
+}
+
+.front .effect {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-image: url('./front-1.png');
+  background-size: cover;
+}
+
+.front .power {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 3;
+  background-image: url('./count-1.png');
+  background-size: cover;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front .power .powerEffect {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  z-index: 4;
+  background-image: url('./count-2.png');
+  background-size: cover;
+}
+
+.front .power .powerText {
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(0, 0, 0) 0px 2px 5px;
+  margin: -2px 1px 0px 0px;
+  padding: 0;
+  margin: 0;
+}
+
+.front .cost {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  z-index: 3;
+  background-image: url('./cost.png');
+  background-size: cover;
+  height: 40px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+}
+
+.front .cost .costText {
+  margin: 0 0 2px 0;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-shadow: rgb(0, 0, 0) 0px 2px 5px;
+  padding: 0;
+}
+
+.back {
+  width: 120px;
+  height: 180px;
+  transform: rotateY(-180deg) translateZ(1px);
+  background-image: url('./back.webp');
+  background-size: contain;
+}
+
+.right {
+  width: 2px;
+  height: 180px;
+  transform: rotateY(90deg) translateZ(119px);
+  background-image: url('./side.jpg');
+  background-size: cover;
+}
+
+.left {
+  width: 2px;
+  height: 180px;
+  transform: rotateY(-90deg) translateZ(1px);
+  background-image: url('./side.jpg');
+  background-size: cover;
+}
+
+.top {
+  width: 120px;
+  height: 2px;
+  transform: rotateX(90deg) translateZ(1px);
+  background-image: url('./side.jpg');
+  background-size: cover;
+}
+
+.bottom {
+  width: 120px;
+  height: 2px;
+  transform: rotateX(-90deg) translateZ(179px);
+  background-image: url('./side.jpg');
+  background-size: cover;
+}

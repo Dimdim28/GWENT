@@ -8,7 +8,11 @@ export type Card = {
   image: string;
 };
 
-export type GameCard = Card & { isOnBoard: boolean; id: number };
+export type GameCard = Card & {
+  isOnBoard: boolean;
+  id: number;
+  isCanAttack: boolean;
+};
 
 export type Hero = {
   fraction: Fraction;

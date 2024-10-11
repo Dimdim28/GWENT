@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { ChooseFraction } from './pages';
+import { ChooseFraction, Game } from './pages';
 
 import './App.css';
 
@@ -26,7 +26,8 @@ function App() {
 
   return (
     <>
-      <ChooseFraction />
+      {/* <ChooseFraction /> */}
+      <Game />
     </>
   );
 }

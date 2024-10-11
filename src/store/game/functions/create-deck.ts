@@ -6,5 +6,6 @@ export function createDeck(): GameCard[] {
     ...card,
     id: index + 1,
     isOnBoard: false,
+    isCanAttack: false,
   }));
 }

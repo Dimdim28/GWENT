@@ -1,8 +1,8 @@
-import harpia from '../assets/Harpia_Premium.webp';
-import mahakam from '../assets/redman.gif';
-import regis from '../assets/regis.gif';
-import skellige_warrior from '../assets/skellige_warrior.gif';
-import tissaya from '../assets/tissaya.gif';
+import harpia from '../assets/cards-animated/Harpia_Premium.webp';
+import mahakam from '../assets/cards-animated/redman.gif';
+import regis from '../assets/cards-animated/regis.gif';
+import skellige_warrior from '../assets/cards-animated/skellige_warrior.gif';
+import tissaya from '../assets/cards-animated/tissaya.gif';
 
 import { Card } from './../types/general';
 

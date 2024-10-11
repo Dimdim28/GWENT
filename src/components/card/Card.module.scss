@@ -194,7 +194,7 @@
   width: 2px;
   height: 180px;
   transform: rotateY(90deg) translateZ(119px);
-  background-image: url('../../assets/side.jpg');
+  background-image: url('../../assets/cards-front/side.jpg');
   background-size: cover;
 }
 
@@ -202,7 +202,7 @@
   width: 2px;
   height: 180px;
   transform: rotateY(-90deg) translateZ(1px);
-  background-image: url('../../assets/side.jpg');
+  background-image: url('../../assets/cards-front/side.jpg');
   background-size: cover;
 }
 
@@ -210,7 +210,7 @@
   width: 120px;
   height: 2px;
   transform: rotateX(90deg) translateZ(1px);
-  background-image: url('../../assets/side.jpg');
+  background-image: url('../../assets/cards-front/side.jpg');
   background-size: cover;
 }
 
@@ -218,6 +218,6 @@
   width: 120px;
   height: 2px;
   transform: rotateX(-90deg) translateZ(179px);
-  background-image: url('../../assets/side.jpg');
+  background-image: url('../../assets/cards-front/side.jpg');
   background-size: cover;
 }

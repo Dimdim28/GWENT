@@ -10,8 +10,8 @@
   position: relative;
 
   &::before {
-    content: "";
-    background-image: url("../../assets/background-1.jpg");
+    content: '';
+    background-image: url('../../assets/background/background-1.jpg');
     background-size: cover;
     filter: brightness(0.5);
     position: absolute;

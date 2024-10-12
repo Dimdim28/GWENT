@@ -1,5 +1,5 @@
-// import Card from '../../components/card/Card';
-// import { ALL_CARDS } from '../../constants/cards';
+import Card from '../../components/card/Card';
+import { ALL_CARDS } from '../../constants/cards';
 import { getFractionLogo } from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
 
@@ -35,11 +35,17 @@ export const Game = () => {
         <p>player - {player.fraction}</p>
         <p>enemy - {enemy.fraction}</p>
 
-        {/* <div className={styles.cards}>
-        {ALL_CARDS.map((card, id) => (
-          <Card key={id} card={card} />
-        ))}
-      </div> */}
+        <div className={`${styles.cards} ${styles.enemy}`}>
+          {ALL_CARDS.map((card, id) => (
+            <Card key={id} card={card} />
+          ))}
+        </div>
+
+        <div className={`${styles.cards} ${styles.player}`}>
+          {ALL_CARDS.map((card, id) => (
+            <Card key={id} card={card} />
+          ))}
+        </div>
       </div>
     </div>
   );

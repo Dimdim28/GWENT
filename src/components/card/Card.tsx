@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { getFractionIcons } from '../../helpers';
+import { classNames, getFractionIcons } from '../../helpers';
 import { Card as CardType } from '../../types/general';
 
 import styles from './Card.module.scss';
@@ -15,7 +15,7 @@ const Card: FC<CardProps> = ({ card }) => {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.card}>
-        <div className={`${styles.side} ${styles.front}`}>
+        <div className={classNames(styles.side, styles.front)}>
           <div className={styles.character}>
             <img src={card.image} />
           </div>
@@ -32,13 +32,13 @@ const Card: FC<CardProps> = ({ card }) => {
             <p className={styles.powerText}>{card.value}</p>
           </div>
         </div>
-        <div className={`${styles.side} ${styles.back}`}>
+        <div className={classNames(styles.side, styles.back)}>
           <img src={back} className={styles.backBg} />
         </div>
-        <div className={`${styles.side} ${styles.right}`}></div>
-        <div className={`${styles.side} ${styles.left}`}></div>
-        <div className={`${styles.side} ${styles.top}`}></div>
-        <div className={`${styles.side} ${styles.bottom}`}></div>
+        <div className={classNames(styles.side, styles.right)}></div>
+        <div className={classNames(styles.side, styles.left)}></div>
+        <div className={classNames(styles.side, styles.top)}></div>
+        <div className={classNames(styles.side, styles.bottom)}></div>
       </div>
     </div>
   );

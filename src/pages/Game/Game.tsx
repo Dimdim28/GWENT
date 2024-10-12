@@ -1,6 +1,6 @@
 import Card from '../../components/card/Card';
 import { ALL_CARDS } from '../../constants/cards';
-import { getFractionLogo } from '../../helpers';
+import { classNames, getFractionLogo } from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
 
 import styles from './Game.module.scss';
@@ -11,7 +11,7 @@ export const Game = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
-        <div className={`${styles.userInfo} ${styles.enemy}`}>
+        <div className={classNames(styles.userInfo, styles.enemy)}>
           <img
             className={styles.fractionIcon}
             src={getFractionLogo(enemy.fraction)}
@@ -21,7 +21,7 @@ export const Game = () => {
             <p className={styles.points}>{enemy.points} points</p>
           </div>
         </div>
-        <div className={`${styles.userInfo} ${styles.player}`}>
+        <div className={classNames(styles.userInfo, styles.player)}>
           <img
             className={styles.fractionIcon}
             src={getFractionLogo(player.fraction)}
@@ -35,13 +35,13 @@ export const Game = () => {
         <p>player - {player.fraction}</p>
         <p>enemy - {enemy.fraction}</p>
 
-        <div className={`${styles.cards} ${styles.enemy}`}>
+        <div className={classNames(styles.cards, styles.enemy)}>
           {ALL_CARDS.map((card, id) => (
             <Card key={id} card={card} />
           ))}
         </div>
 
-        <div className={`${styles.cards} ${styles.player}`}>
+        <div className={classNames(styles.cards, styles.player)}>
           {ALL_CARDS.map((card, id) => (
             <Card key={id} card={card} />
           ))}

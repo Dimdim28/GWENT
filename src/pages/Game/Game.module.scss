@@ -42,20 +42,19 @@
 
   &.enemy {
     position: absolute;
-    right: calc(var(--vwh) * 1);
-    top: calc(var(--vwh) * 1);
+    right: calc(var(--vwh) * 0.5);
+    top: calc(var(--vwh) * 0.1);
   }
 
   &.player {
     position: absolute;
-    left: calc(var(--vwh) * 1);
-    bottom: calc(var(--vwh) * 1);
+    left: calc(var(--vwh) * 0.1);
+    bottom: calc(var(--vwh) * 0.1);
   }
 
   .fractionIcon {
-    width: 80px;
-    height: auto;
-    margin-right: 10px;
+    width: calc(var(--vwh) * 3);
+    height: calc(var(--vwh) * 3);
   }
 
   .column {
@@ -73,12 +72,12 @@
       background-clip: text;
       -webkit-text-fill-color: transparent;
       text-shadow: none;
-      font-size: 30px;
+      font-size: calc(var(--vwh) * 1);
     }
 
     .points {
       color: var(--title-white-color);
-      font-size: 16px;
+      font-size: calc(var(--vwh) * 0.5);
     }
   }
 }

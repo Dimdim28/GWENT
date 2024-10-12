@@ -8,6 +8,7 @@ export interface GameStore {
   isGameStarted: boolean;
   startGame: () => void;
   endTurn: () => void;
+  takeCard: (role: Turn) => void;
   playCard: (cardId: number) => void;
   attackCard: (attacker: number, target: number) => void;
   setUserFraction: (fraction: Fraction) => void;

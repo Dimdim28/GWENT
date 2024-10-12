@@ -134,7 +134,7 @@ import { Card } from './../types/general';
 //   },
 // ];
 
-export const skelligeCards: Card[] = [
+export const SKELLIGE_CARDS: Card[] = [
   {
     fraction: 'skellige',
     cost: 5,
@@ -257,7 +257,7 @@ export const skelligeCards: Card[] = [
   },
 ];
 
-export const monsterCards: Card[] = [
+export const MONSTERS_CARDS: Card[] = [
   {
     fraction: 'monster',
     cost: 3,
@@ -380,7 +380,7 @@ export const monsterCards: Card[] = [
   },
 ];
 
-export const northCards: Card[] = [
+export const NORTH_CARDS: Card[] = [
   {
     fraction: 'north',
     cost: 3,
@@ -503,7 +503,7 @@ export const northCards: Card[] = [
   },
 ];
 
-export const elfCard: Card[] = [
+export const ELF_CARDS: Card[] = [
   {
     fraction: 'elf',
     cost: 5,
@@ -626,7 +626,7 @@ export const elfCard: Card[] = [
   },
 ];
 
-export const nilfgaardCards: Card[] = [
+export const NILFGAARD_CARDS: Card[] = [
   {
     fraction: 'nilfgaard',
     cost: 4,

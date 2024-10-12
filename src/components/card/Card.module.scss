@@ -2,6 +2,7 @@
   width: calc(var(--vwh) * 6);
   height: calc(var(--vwh) * 9);
   perspective: calc(var(--vwh) * 9);
+
   &.board {
     position: relative;
     transform: rotateY(0deg);
@@ -19,9 +20,17 @@
     }
   }
 
-  // &.hand {
-  //   position: absolute;
-  // }
+  &.hand {
+    position: absolute;
+    cursor: pointer;
+    transition: transform var(--transition-time) linear;
+    &:hover {
+      z-index: 4;
+      .front::after {
+        opacity: 1;
+      }
+    }
+  }
 
   // &.grave {
   //   position: absolute;

@@ -1,6 +1,6 @@
 import { GameStore } from '../game.types';
 
-export const PlayCardAction = (
+export const playCardAction = (
   state: GameStore,
   cardId: number,
 ): Partial<GameStore> => {

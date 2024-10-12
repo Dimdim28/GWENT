@@ -28,13 +28,13 @@ const getRotationIndex = (index: number, total: number) => {
 const getTransformOrigin = (index: number, total: number) => {
   const middle = Math.floor(total / 2);
   if (total % 2 === 0) {
-    return index < middle ? 'left bottom' : 'right bottom';
+    return index < middle ? 'right bottom' : 'left bottom';
   } else {
     return index === middle
       ? 'center'
       : index < middle
-        ? 'left bottom'
-        : 'right bottom';
+        ? 'right bottom'
+        : 'left bottom';
   }
 };
 
@@ -53,8 +53,9 @@ const Card: FC<CardProps> = ({ card, cardIndex, total, isEnemy }) => {
       style={{
         ...(cardIndex !== undefined && total
           ? {
-              transform: `translateX(${getRotationIndex(cardIndex, total) * 40}px)
-                          rotate(${getRotationIndex(cardIndex, total) * 5}deg)`,
+              transform: `translateX(${getRotationIndex(cardIndex, total) * 50}px)
+                          rotate(${getRotationIndex(cardIndex, total) * 6}deg)`,
+
               ...(isEnemy !== undefined
                 ? {
                     transformOrigin: getTransformOrigin(cardIndex, total),

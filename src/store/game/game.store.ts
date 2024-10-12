@@ -16,14 +16,14 @@ const initialPlayerState: Hero = {
   fraction: 'monster',
   cards: createDeck('monster'),
   points: 0,
-  money: 10,
+  money: 20,
 };
 
 const initialEnemyState: Hero = {
   fraction: 'elf',
   cards: createDeck('elf'),
   points: 0,
-  money: 10,
+  money: 20,
 };
 
 const initialGameData: {

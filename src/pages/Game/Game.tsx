@@ -7,7 +7,7 @@ import { useGameStore } from '../../store/game/game.store';
 import styles from './Game.module.scss';
 
 export const Game = () => {
-  const { player, enemy, takeCard } = useGameStore();
+  const { player, enemy, takeCard, currentTurn } = useGameStore();
 
   useEffect(() => {
     const takeMultipleCards = (numberOfCards: number) => {
@@ -113,6 +113,25 @@ export const Game = () => {
               />
             ))}
         </div>
+      </div>
+      <div className={styles.divider}></div>
+      <div
+        className={classNames(
+          styles.shadow,
+          styles.enemy,
+          currentTurn === 'Opponent' ? styles.active : undefined,
+        )}
+      ></div>
+      <div
+        className={classNames(
+          styles.shadow,
+          styles.player,
+          currentTurn === 'Player' ? styles.active : undefined,
+        )}
+      ></div>
+
+      <div className={styles.moneyWrapper}>
+        <b>{player.money}</b> <p>coins</p>
       </div>
     </div>
   );

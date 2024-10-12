@@ -1,5 +1,4 @@
 import Card from '../../components/card/Card';
-import { ALL_CARDS } from '../../constants/cards';
 import { classNames, getFractionLogo } from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
 
@@ -36,14 +35,50 @@ export const Game = () => {
         <p>enemy - {enemy.fraction}</p>
 
         <div className={classNames(styles.cards, styles.enemy)}>
-          {ALL_CARDS.map((card, id) => (
-            <Card key={id} card={card} />
+          {enemy.cards.map((card, id) => (
+            <Card key={id} card={{ ...card, status: 'onTable' }} />
           ))}
         </div>
 
         <div className={classNames(styles.cards, styles.player)}>
-          {ALL_CARDS.map((card, id) => (
-            <Card key={id} card={card} />
+          {player.cards.map((card, id) => (
+            <Card key={id} card={{ ...card, status: 'onTable' }} />
+          ))}
+        </div>
+
+        <div className={classNames(styles.unUsedCards, styles.player)}>
+          {player.cards.map((card, id) => (
+            <Card key={id} card={{ ...card, status: 'inDeck' }} />
+          ))}
+        </div>
+
+        <div className={classNames(styles.unUsedCards, styles.enemy)}>
+          {enemy.cards.map((card, id) => (
+            <Card key={id} card={{ ...card, status: 'inDeck' }} />
+          ))}
+        </div>
+
+        <div className={classNames(styles.handCards, styles.player)}>
+          {player.cards.map((card, id) => (
+            <Card
+              key={id}
+              card={{ ...card, status: 'inDeck' }}
+              cardIndex={id}
+              total={player.cards.length}
+              isEnemy={false}
+            />
+          ))}
+        </div>
+
+        <div className={classNames(styles.handCards, styles.enemy)}>
+          {enemy.cards.map((card, id) => (
+            <Card
+              key={id}
+              card={{ ...card, status: 'inDeck' }}
+              cardIndex={id}
+              total={enemy.cards.length}
+              isEnemy={true}
+            />
           ))}
         </div>
       </div>

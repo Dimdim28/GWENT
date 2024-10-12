@@ -1,11 +1,31 @@
 .cardContainer {
-  //   position: absolute;
-  //   left: 50%;
-  //   top: 50%;
-  //   transform: translate(-50%, -50%) scale(2);
   width: calc(var(--vwh) * 6);
   height: calc(var(--vwh) * 9);
   perspective: calc(var(--vwh) * 9);
+  &.board {
+    position: relative;
+    transform: rotateY(0deg);
+
+    &:hover .card {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &.deck {
+    position: absolute;
+
+    .card {
+      transform: rotateY(180deg);
+    }
+  }
+
+  // &.hand {
+  //   position: absolute;
+  // }
+
+  // &.grave {
+  //   position: absolute;
+  // }
 }
 
 .card {
@@ -22,10 +42,6 @@
 //   }
 // }
 
-.cardContainer:hover .card {
-  transform: rotateY(180deg);
-}
-
 .side {
   position: absolute;
   width: inherit;
@@ -33,70 +49,173 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &.back {
+    width: 100%;
+    height: 100%;
+    transform: rotateY(-180deg) translateZ(1px);
+    position: absolute;
+
+    .backBg {
+      width: 100%;
+      height: 100%;
+      background-image: url('./back.webp');
+      background-size: contain;
+    }
+  }
+
+  &.right {
+    width: 2px;
+    height: 100%;
+    transform: rotateY(90deg) translateZ(calc(var(--vwh) * 6 - 1px));
+    background-image: url('../../assets/cards-front/side.jpg');
+    background-size: cover;
+  }
+
+  &.left {
+    width: 2px;
+    height: 100%;
+    transform: rotateY(-90deg) translateZ(1px);
+    background-image: url('../../assets/cards-front/side.jpg');
+    background-size: cover;
+  }
+
+  &.top {
+    width: 100%;
+    height: 2px;
+    transform: rotateX(90deg) translateZ(1px);
+    background-image: url('../../assets/cards-front/side.jpg');
+    background-size: cover;
+  }
+
+  &.bottom {
+    width: 100%;
+    height: 2px;
+    transform: rotateX(-90deg) translateZ(calc(var(--vwh) * 9 - 1px));
+    background-image: url('../../assets/cards-front/side.jpg');
+    background-size: cover;
+  }
 }
 
 .front {
   width: 100%;
   height: 100%;
   transform: translateZ(1px);
-}
 
-.front .character {
-  position: absolute;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-}
+  .character {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
 
-.front .character img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
+    img {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
+  }
 
-.front .effect {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  background-image: url('../../assets//cards-front/border.png');
-  background-size: cover;
-}
+  .effect {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets//cards-front/border.png');
+    background-size: cover;
+  }
 
-.front .power {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: 3;
-  background-size: cover;
-  width: calc(var(--vwh) * 2);
-  height: calc(var(--vwh) * 2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .power {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 3;
+    background-size: cover;
+    width: calc(var(--vwh) * 2);
+    height: calc(var(--vwh) * 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.powerBg {
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 3;
-}
+    .powerBg {
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 3;
+    }
 
-.front .power .powerEffect {
-  position: absolute;
-  width: calc(var(--vwh) * 0.5);
-  height: calc(var(--vwh) * 0.5);
-  left: calc(var(--vwh) * 0.25);
-  top: calc(var(--vwh) * 0.25);
-  z-index: 4;
-  background-image: url('../../assets/cards-front/gold_detail.png');
-  background-size: cover;
+    .powerEffect {
+      position: absolute;
+      width: calc(var(--vwh) * 0.5);
+      height: calc(var(--vwh) * 0.5);
+      left: calc(var(--vwh) * 0.25);
+      top: calc(var(--vwh) * 0.25);
+      z-index: 4;
+      background-image: url('../../assets/cards-front/gold_detail.png');
+      background-size: cover;
+    }
+
+    .powerText {
+      font-size: calc(var(--vwh) * 0.75);
+      margin: -2px 1px 0px 0px;
+      padding: 0;
+      margin: 0;
+      z-index: 4;
+
+      font-family: GWENT, sans-serif;
+      color: rgb(255, 255, 255);
+      text-shadow: rgb(0, 0, 0) 0px 2px 5px;
+    }
+  }
+
+  .cost {
+    position: absolute;
+    right: calc(var(--vwh) * 0.15);
+    bottom: calc(var(--vwh) * 0.2);
+    z-index: 3;
+    height: calc(var(--vwh) * 2.4);
+    width: calc(var(--vwh) * 1.14);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+
+    .costBg {
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 3;
+    }
+
+    .costText {
+      margin: 0 0 calc(var(--vwh) * 0.25) 0;
+      font-size: calc(var(--vwh) * 0.75);
+      padding: 0;
+      position: relative;
+      z-index: 4;
+
+      color: var(--bg-orange-text);
+      background-image: linear-gradient(
+        to right,
+        var(--bg-yellow-text),
+        var(--bg-orange-text)
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+      text-align: center;
+      font-family: Gwent, sans-serif;
+    }
+  }
 }
 
 .front::after {
@@ -117,107 +236,4 @@
   border-color: var(--border-green-color);
   border-radius: 4px;
   transition: opacity var(--transition-time) ease-in-out;
-}
-
-.front .power .powerText {
-  font-size: calc(var(--vwh) * 0.75);
-  margin: -2px 1px 0px 0px;
-  padding: 0;
-  margin: 0;
-  z-index: 4;
-
-  font-family: GWENT, sans-serif;
-  color: rgb(255, 255, 255);
-  text-shadow: rgb(0, 0, 0) 0px 2px 5px;
-}
-
-.front .cost {
-  position: absolute;
-  right: calc(var(--vwh) * 0.15);
-  bottom: calc(var(--vwh) * 0.2);
-  z-index: 3;
-  height: calc(var(--vwh) * 2.4);
-  width: calc(var(--vwh) * 1.14);
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  flex-direction: column;
-}
-
-.costBg {
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 3;
-}
-
-.front .cost .costText {
-  margin: 0 0 calc(var(--vwh) * 0.25) 0;
-  font-size: calc(var(--vwh) * 0.75);
-  padding: 0;
-  position: relative;
-  z-index: 4;
-
-  color: var(--bg-orange-text);
-  background-image: linear-gradient(
-    to right,
-    var(--bg-yellow-text),
-    var(--bg-orange-text)
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: none;
-  text-align: center;
-  font-family: Gwent, sans-serif;
-}
-
-.back {
-  width: 100%;
-  height: 100%;
-  transform: rotateY(-180deg) translateZ(1px);
-  position: absolute;
-}
-
-.backBg {
-  width: 100%;
-  height: 100%;
-  background-image: url('./back.webp');
-  background-size: contain;
-}
-
-.right {
-  width: 2px;
-  height: 100%;
-  transform: rotateY(90deg) translateZ(calc(var(--vwh) * 6 - 1px));
-  background-image: url('../../assets/cards-front/side.jpg');
-  background-size: cover;
-}
-
-.left {
-  width: 2px;
-  height: 100%;
-  transform: rotateY(-90deg) translateZ(1px);
-  background-image: url('../../assets/cards-front/side.jpg');
-  background-size: cover;
-}
-
-.top {
-  width: 100%;
-  height: 2px;
-  transform: rotateX(90deg) translateZ(1px);
-  background-image: url('../../assets/cards-front/side.jpg');
-  background-size: cover;
-}
-
-.bottom {
-  width: 100%;
-  height: 2px;
-  transform: rotateX(-90deg) translateZ(calc(var(--vwh) * 9 - 1px));
-  background-image: url('../../assets/cards-front/side.jpg');
-  background-size: cover;
 }

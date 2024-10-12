@@ -6,7 +6,7 @@ const getNewMoney = (role: Turn, newTurn: Turn, money: number) =>
   newTurn === role ? Math.min(money + 1, 10) : money;
 
 const resetAttack = (deck: GameCard[]) =>
-  deck.map((card) => ({ ...card, isCanAttack: card.isOnBoard }));
+  deck.map((card) => ({ ...card, isCanAttack: card.status === 'onTable' }));
 
 export const endTurnAction = (get: () => GameStore): Partial<GameStore> => {
   const state = get();

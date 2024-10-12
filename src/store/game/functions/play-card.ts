@@ -12,7 +12,7 @@ export const PlayCardAction = (
   const currentCard = currentPlayer.cards.find((card) => card?.id === cardId);
 
   if (currentCard && currentPlayer.money >= currentCard.cost) {
-    currentCard.isOnBoard = true;
+    currentCard.status = 'onTable';
     currentPlayer.money -= currentCard.cost;
   }
 

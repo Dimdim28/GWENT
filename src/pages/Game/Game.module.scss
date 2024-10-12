@@ -2,7 +2,6 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
-
   position: relative;
 
   &::before {
@@ -94,5 +93,41 @@
     width: 100%;
     padding: calc(var(--vwh) * 0.5) calc(var(--vwh) * 2) 0;
     top: 50%;
+  }
+}
+
+.unUsedCards {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: calc(var(--vwh) * 6);
+  height: calc(var(--vwh) * 9);
+  &.enemy {
+    top: calc(var(--vwh) * 0.5);
+    left: calc(var(--vwh) * 0.5);
+  }
+
+  &.player {
+    right: calc(var(--vwh) * 0.5);
+    bottom: calc(var(--vwh) * 0.5);
+  }
+}
+
+.handCards {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  width: calc(var(--vwh) * 6);
+  height: calc(var(--vwh) * 9);
+
+  &.enemy {
+    top: calc(var(--vwh) * (-4));
+    left: calc(50% - 3 * var(--vwh));
+    transform: rotate(180deg); //todo: убрать это  когда перепишу через абсолюь
+  }
+
+  &.player {
+    left: calc(50% - 3 * var(--vwh));
+    bottom: calc(var(--vwh) * (-4));
   }
 }

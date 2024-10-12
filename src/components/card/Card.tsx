@@ -1,19 +1,69 @@
 import { FC } from 'react';
 
 import { classNames, getFractionIcons } from '../../helpers';
-import { Card as CardType } from '../../types/general';
+import { GameCard } from '../../types/general';
 
 import styles from './Card.module.scss';
 
 interface CardProps {
-  card: CardType;
+  card: GameCard;
+  cardIndex?: number;
+  total?: number;
+  isEnemy?: boolean;
 }
 
-const Card: FC<CardProps> = ({ card }) => {
+const getRotationIndex = (index: number, total: number) => {
+  const middle = Math.floor(total / 2);
+  if (total % 2 === 0) {
+    return index < middle ? index - middle : index - middle + 1;
+  } else {
+    return index === middle
+      ? 0
+      : index < middle
+        ? index - middle
+        : index - middle;
+  }
+};
+
+const getTransformOrigin = (index: number, total: number) => {
+  const middle = Math.floor(total / 2);
+  if (total % 2 === 0) {
+    return index < middle ? 'left bottom' : 'right bottom';
+  } else {
+    return index === middle
+      ? 'center'
+      : index < middle
+        ? 'left bottom'
+        : 'right bottom';
+  }
+};
+
+const Card: FC<CardProps> = ({ card, cardIndex, total, isEnemy }) => {
   const { points, cost, back } = getFractionIcons(card.fraction);
 
   return (
-    <div className={styles.cardContainer}>
+    <div
+      className={classNames(
+        styles.cardContainer,
+        card.status === 'onTable' ? styles.board : '',
+        card.status === 'inDeck' ? styles.deck : '',
+        card.status === 'inHand' ? styles.hand : '',
+        card.status === 'inGrave' ? styles.grave : '',
+      )}
+      style={{
+        ...(cardIndex !== undefined && total
+          ? {
+              transform: `translateX(${getRotationIndex(cardIndex, total) * 40}px)
+                          rotate(${getRotationIndex(cardIndex, total) * 5}deg)`,
+              ...(isEnemy !== undefined
+                ? {
+                    transformOrigin: getTransformOrigin(cardIndex, total),
+                  }
+                : {}),
+            }
+          : {}),
+      }}
+    >
       <div className={styles.card}>
         <div className={classNames(styles.side, styles.front)}>
           <div className={styles.character}>

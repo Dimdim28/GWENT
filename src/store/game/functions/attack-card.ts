@@ -6,8 +6,6 @@ export const attackCardAction = (
   attackerId: number,
   targetId: number,
 ): Partial<GameStore> => {
-  console.log('attack', attackerId, 'target', targetId);
-
   const isPlayerAttack = state.currentTurn === 'Player';
 
   const attacker = isPlayerAttack
@@ -19,7 +17,12 @@ export const attackCardAction = (
     : findCardById(state.player.cards, targetId);
 
   if (attacker && target && attacker.isCanAttack) {
-    target.value -= Math.min(attacker.value, target.value);
+    const targetValue = target.value;
+    const attackerValue = attacker.value;
+
+    console.log('attack', attackerValue, 'target', targetValue);
+
+    target.value -= Math.min(attackerValue, targetValue);
 
     if (target.value <= 0) {
       if (isPlayerAttack) {
@@ -30,7 +33,23 @@ export const attackCardAction = (
     }
 
     attacker.isCanAttack = false;
+    if (isPlayerAttack) {
+      return {
+        player: state.player,
+        enemy: {
+          ...state.enemy,
+          points: (state.enemy.points -= Math.min(attackerValue, targetValue)),
+        },
+      };
+    } else {
+      return {
+        player: {
+          ...state.player,
+          points: (state.player.points -= Math.min(attackerValue, targetValue)),
+        },
+        enemy: state.enemy,
+      };
+    }
   }
-
   return { player: state.player, enemy: state.enemy };
 };

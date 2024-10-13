@@ -7,8 +7,15 @@ import { useGameStore } from '../../store/game/game.store';
 import styles from './Game.module.scss';
 
 export const Game = () => {
-  const { player, enemy, takeCard, currentTurn, endTurn, playCard } =
-    useGameStore();
+  const {
+    player,
+    enemy,
+    takeCard,
+    currentTurn,
+    endTurn,
+    enemyAttackRandomTargets,
+    enemyPlayRandomCards,
+  } = useGameStore();
   const [activecard, setActiveCard] = useState<number | null>(null);
 
   useEffect(() => {
@@ -27,26 +34,10 @@ export const Game = () => {
 
   useEffect(() => {
     if (currentTurn === 'Opponent') {
-      const playableCards = enemy.cards.filter(
-        (card) => card.status === 'inHand' && enemy.money >= card.cost,
-      );
-
-      if (playableCards.length > 0) {
-        const randomIndex = Math.floor(Math.random() * playableCards.length);
-        const firstCard = playableCards[randomIndex];
-
-        playCard(firstCard.id);
-
-        playableCards.forEach((card, index) => {
-          if (index !== randomIndex && enemy.money >= card.cost) {
-            playCard(card.id);
-          }
-        });
-      } else {
-        endTurn();
-      }
+      enemyPlayRandomCards();
+      enemyAttackRandomTargets();
     }
-  }, [currentTurn, enemy.cards, enemy.money, playCard, endTurn]);
+  }, [currentTurn, enemyPlayRandomCards, enemyAttackRandomTargets]);
 
   return (
     <div className={styles.wrapper}>

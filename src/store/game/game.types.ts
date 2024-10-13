@@ -13,4 +13,6 @@ export interface GameStore {
   attackCard: (attacker: number, target: number) => void;
   setUserFraction: (fraction: Fraction) => void;
   setEnemyFraction: (fraction: Fraction) => void;
+  enemyAttackRandomTargets: () => void;
+  enemyPlayRandomCards: () => void;
 }

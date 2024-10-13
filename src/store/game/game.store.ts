@@ -7,6 +7,8 @@ import {
   attackCardAction,
   createDeck,
   endTurnAction,
+  enemyAttackRandomCards,
+  enemyPlayRandomCards,
   playCardAction,
   takeCardAction,
 } from './functions';
@@ -60,6 +62,9 @@ export const useGameStore = create(
     attackCard: (attackerId: number, targetId: number) => {
       set((state) => attackCardAction(state, attackerId, targetId));
     },
+    enemyAttackRandomTargets: () =>
+      set((state) => enemyAttackRandomCards(state)),
+    enemyPlayRandomCards: () => set((state) => enemyPlayRandomCards(state)),
     endTurn: () => {
       set(endTurnAction(get));
     },

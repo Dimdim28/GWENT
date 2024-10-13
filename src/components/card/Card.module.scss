@@ -30,6 +30,19 @@
         opacity: 1;
       }
     }
+
+    &.enemyCard {
+      cursor: default;
+      &:hover {
+        z-index: inherit;
+        .front::after {
+          opacity: 0;
+        }
+      }
+      .card {
+        transform: rotateY(180deg);
+      }
+    }
   }
 
   // &.grave {

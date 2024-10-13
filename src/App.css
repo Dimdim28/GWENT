@@ -3,7 +3,7 @@
   --vwh: calc(1vw + 1vh);
   --transition-time: 0.3s;
 
-  --title-green-color: #01D684;
+  --title-green-color: #00794a;
   --border-green-color: rgb(17, 255, 184);
 
   --title-white-color: #ffffff;
@@ -63,6 +63,7 @@ h4,
 h5,
 p,
 span,
-b {
+b,
+button {
   font-family: 'Gwent', sans-serif;
 }

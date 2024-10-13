@@ -14,6 +14,7 @@ export const playCardAction = (
   if (currentCard && currentPlayer.money >= currentCard.cost) {
     currentCard.status = 'onTable';
     currentPlayer.money -= currentCard.cost;
+    currentPlayer.points += currentCard.value;
   }
 
   return isPlayerTurn ? { player: currentPlayer } : { enemy: currentPlayer };

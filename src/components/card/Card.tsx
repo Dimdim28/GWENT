@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import { classNames, getFractionIcons } from '../../helpers';
+import { useGameStore } from '../../store/game/game.store';
 import { GameCard } from '../../types/general';
 
 import styles from './Card.module.scss';
@@ -39,16 +40,27 @@ const getTransformOrigin = (index: number, total: number) => {
 };
 
 const Card: FC<CardProps> = ({ card, cardIndex, total, isEnemy }) => {
+  const { playCard } = useGameStore();
   const { points, cost, back } = getFractionIcons(card.fraction);
+
+  const handleOnClick = () => {
+    if (isEnemy) return;
+
+    if (card.status === 'inHand') {
+      playCard(card.id);
+    }
+  };
 
   return (
     <div
+      onClick={handleOnClick}
       className={classNames(
         styles.cardContainer,
-        card.status === 'onTable' ? styles.board : '',
-        card.status === 'inDeck' ? styles.deck : '',
-        card.status === 'inHand' ? styles.hand : '',
-        card.status === 'inGrave' ? styles.grave : '',
+        isEnemy ? styles.enemyCard : undefined,
+        card.status === 'onTable' ? styles.board : undefined,
+        card.status === 'inDeck' ? styles.deck : undefined,
+        card.status === 'inHand' ? styles.hand : undefined,
+        card.status === 'inGrave' ? styles.grave : undefined,
       )}
       style={{
         ...(cardIndex !== undefined && total

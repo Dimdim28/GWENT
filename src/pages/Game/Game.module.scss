@@ -222,3 +222,33 @@
     color: var(--title-white-color);
   }
 }
+
+.movesButton {
+  position: absolute;
+  display: block;
+  top: 50%;
+  z-index: 5;
+  transform: translateY(-50%);
+  border: none;
+  color: var(--bg-orange-text);
+  font-size: calc(var(--vwh) * 0.6);
+  padding: calc(var(--vwh) * 0.4) calc(var(--vwh) * 0.6);
+  margin-left: calc(var(--vwh) * 1);
+  text-align: center;
+  background: transparent;
+  border: 2px solid var(--bg-orange-text);
+  cursor: pointer;
+  transition: background-color var(--transition-time) ease-in;
+  border-radius: 15%;
+  &:hover {
+    background: var(--title-green-color);
+  }
+  &:disabled {
+    pointer-events: none;
+    background: var(--bg-orange-text);
+    color: var(--bg-shadow-enemy);
+    &:hover {
+      background: var(--bg-orange-text);
+    }
+  }
+}

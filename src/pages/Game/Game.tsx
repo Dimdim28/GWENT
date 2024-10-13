@@ -133,6 +133,13 @@ export const Game = () => {
       <div className={styles.moneyWrapper}>
         <b>{player.money}</b> <p>coins</p>
       </div>
+
+      <button
+        className={styles.movesButton}
+        disabled={currentTurn === 'Opponent'}
+      >
+        {currentTurn === 'Player' ? 'End move' : 'Enemy move'}
+      </button>
     </div>
   );
 };

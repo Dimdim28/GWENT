@@ -16,6 +16,9 @@
   --bg-shadow-enemy: #c56c6c;
   --bg-shadow-player: #48c1ff;
 
+  --bg-shadow-lost: rgba(197, 108, 108, 0.9);
+  --bg-shadow-won: rgba(72, 193, 255, 0.9);
+
   --bg-orange-text: rgb(226, 167, 62);
   --bg-yellow-text: rgb(250, 223, 122);
   --bg-yellow-etxt-second: rgb(232, 181, 77);

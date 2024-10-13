@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { Fraction, Hero, Turn } from '../../types/general';
+import { Fraction, Hero, Turn, Winner } from '../../types/general';
 
 import {
   attackCardAction,
@@ -13,6 +13,15 @@ import {
   takeCardAction,
 } from './functions';
 import { GameStore } from './game.types';
+
+type InitialGameDataType = {
+  player: Hero;
+  enemy: Hero;
+  currentTurn: Turn;
+  isGameOver: boolean;
+  isGameStarted: boolean;
+  winner: Winner;
+};
 
 const initialPlayerState: Hero = {
   fraction: 'monster',
@@ -28,18 +37,13 @@ const initialEnemyState: Hero = {
   money: 20,
 };
 
-const initialGameData: {
-  player: Hero;
-  enemy: Hero;
-  currentTurn: Turn;
-  isGameOver: boolean;
-  isGameStarted: boolean;
-} = {
+const initialGameData: InitialGameDataType = {
   player: initialPlayerState,
   enemy: initialEnemyState,
   currentTurn: 'Player',
   isGameOver: false,
   isGameStarted: false,
+  winner: null,
 };
 
 export const useGameStore = create(
@@ -55,7 +59,7 @@ export const useGameStore = create(
       set((state) => ({
         enemy: { ...state.enemy, fraction, cards: createDeck(fraction) },
       })),
-    endGame: () => {},
+    endGame: () => set({ isGameStarted: false }),
     playCard: (cardId: number) => {
       set((state) => playCardAction(state, cardId));
     },

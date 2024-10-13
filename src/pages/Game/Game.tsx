@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import Crown from '../../assets/icons/crown';
 import Card from '../../components/card/Card';
 import { classNames, getFractionLogo } from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
@@ -12,9 +13,11 @@ export const Game = () => {
     enemy,
     takeCard,
     currentTurn,
+    winner,
     endTurn,
     enemyAttackRandomTargets,
     enemyPlayRandomCards,
+    endGame,
   } = useGameStore();
   const [activecard, setActiveCard] = useState<number | null>(null);
 
@@ -28,7 +31,7 @@ export const Game = () => {
       }
     };
 
-    const numberOfCardsToTake = 10;
+    const numberOfCardsToTake = 8;
     takeMultipleCards(numberOfCardsToTake);
   }, [takeCard]);
 
@@ -168,6 +171,21 @@ export const Game = () => {
       >
         {currentTurn === 'Player' ? 'End move' : 'Enemy move'}
       </button>
+
+      {winner && (
+        <div
+          className={classNames(
+            styles.gameEndedWrapper,
+            winner === 'Player' ? styles.won : styles.lost,
+          )}
+        >
+          <div className={styles.gameEndedContent}>
+            <Crown />
+            <h2> {winner === 'Enemy' ? 'Defeated!' : 'Victory'}</h2>
+            <button onClick={endGame}>Try Again</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

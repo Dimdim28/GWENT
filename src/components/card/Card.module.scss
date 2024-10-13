@@ -7,9 +7,9 @@
     position: relative;
     transform: rotateY(0deg);
 
-    &:hover .card {
-      transform: rotateY(180deg);
-    }
+    // &:hover .card {
+    //   transform: rotateY(180deg);
+    // }
   }
 
   &.deck {

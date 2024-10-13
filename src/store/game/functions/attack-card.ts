@@ -6,6 +6,8 @@ export const attackCardAction = (
   attackerId: number,
   targetId: number,
 ): Partial<GameStore> => {
+  console.log('attack', attackerId, 'target', targetId);
+
   const isPlayerAttack = state.currentTurn === 'Player';
 
   const attacker = isPlayerAttack
@@ -26,6 +28,8 @@ export const attackCardAction = (
         state.player.cards = removeCardById(state.player.cards, targetId);
       }
     }
+
+    attacker.isCanAttack = false;
   }
 
   return { player: state.player, enemy: state.enemy };

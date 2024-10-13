@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 
 import { classNames, getFractionIcons } from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
@@ -11,6 +11,8 @@ interface CardProps {
   cardIndex?: number;
   total?: number;
   isEnemy?: boolean;
+  activeCard?: number | null;
+  setActiveCard?: Dispatch<SetStateAction<number | null>>;
 }
 
 const getRotationIndex = (index: number, total: number) => {
@@ -39,15 +41,46 @@ const getTransformOrigin = (index: number, total: number) => {
   }
 };
 
-const Card: FC<CardProps> = ({ card, cardIndex, total, isEnemy }) => {
-  const { playCard } = useGameStore();
+const Card: FC<CardProps> = ({
+  card,
+  cardIndex,
+  total,
+  isEnemy,
+  activeCard,
+  setActiveCard,
+}) => {
+  const { playCard, currentTurn, attackCard } = useGameStore();
   const { points, cost, back } = getFractionIcons(card.fraction);
 
   const handleOnClick = () => {
-    if (isEnemy) return;
+    if (isEnemy) {
+      switch (card.status) {
+        case 'onTable':
+          if (activeCard && setActiveCard) {
+            attackCard(activeCard, card.id);
+            setActiveCard(null);
+          }
+          break;
+        default:
+          break;
+      }
+    } else {
+      if (currentTurn === 'Player') {
+        switch (card.status) {
+          case 'inHand':
+            playCard(card.id);
+            break;
 
-    if (card.status === 'inHand') {
-      playCard(card.id);
+          case 'onTable':
+            if (setActiveCard) {
+              setActiveCard(card.id);
+            }
+
+            break;
+          default:
+            break;
+        }
+      }
     }
   };
 

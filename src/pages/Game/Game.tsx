@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import Card from '../../components/card/Card';
 import { classNames, getFractionLogo } from '../../helpers';
@@ -9,6 +9,7 @@ import styles from './Game.module.scss';
 export const Game = () => {
   const { player, enemy, takeCard, currentTurn, endTurn, playCard } =
     useGameStore();
+  const [activecard, setActiveCard] = useState<number | null>(null);
 
   useEffect(() => {
     const takeMultipleCards = (numberOfCards: number) => {
@@ -78,7 +79,13 @@ export const Game = () => {
           {enemy.cards
             .filter((card) => card.status === 'onTable')
             .map((card, id) => (
-              <Card key={id} card={card} />
+              <Card
+                key={id}
+                card={card}
+                activeCard={activecard}
+                isEnemy
+                setActiveCard={setActiveCard}
+              />
             ))}
         </div>
 
@@ -86,7 +93,12 @@ export const Game = () => {
           {player.cards
             .filter((card) => card.status === 'onTable')
             .map((card, id) => (
-              <Card key={id} card={card} />
+              <Card
+                key={id}
+                card={card}
+                activeCard={activecard}
+                setActiveCard={setActiveCard}
+              />
             ))}
         </div>
 

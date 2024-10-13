@@ -4,7 +4,11 @@
   --transition-time: 0.3s;
 
   --title-green-color: #00794a;
+
   --border-green-color: rgb(17, 255, 184);
+  --border-blue-color: rgb(17, 186, 255);
+  --border-red-color: rgb(255, 80, 80);
+  --border-extrablue-color: rgb(17, 128, 255);
 
   --title-white-color: #ffffff;
   --pulse-color: rgba(255, 255, 255, 0.5);

@@ -6,10 +6,38 @@
   &.board {
     position: relative;
     transform: rotateY(0deg);
+    box-shadow: 0 0 10px transparent;
+    transition: box-shadow var(--transition-time) ease;
 
-    // &:hover .card {
-    //   transform: rotateY(180deg);
-    // }
+    &.canAttack {
+      &:hover {
+        box-shadow: 0 0 10px var(--border-blue-color);
+      }
+      &.activeCardSelected {
+        &:hover {
+          box-shadow: 0 0 10px var(--border-blue-color);
+        }
+        &.isActiveCard {
+          box-shadow: 0 0 20px var(--border-extrablue-color);
+        }
+      }
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--border-green-color);
+
+      &.enemyCard {
+        cursor: default;
+        &:hover {
+          box-shadow: 0 0 10px var(--border-green-color);
+        }
+        &.activeCardSelected {
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: 0 0 10px var(--border-red-color);
+          }
+        }
+      }
+    }
   }
 
   &.deck {

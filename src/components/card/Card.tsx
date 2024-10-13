@@ -52,6 +52,29 @@ const Card: FC<CardProps> = ({
   const { playCard, currentTurn, attackCard } = useGameStore();
   const { points, cost, back } = getFractionIcons(card.fraction);
 
+  const getCardStatusClassName = (status: GameCard['status']) => {
+    switch (status) {
+      case 'inDeck': {
+        return styles.deck;
+      }
+      case 'inGrave': {
+        return styles.grave;
+      }
+
+      case 'inHand': {
+        return styles.hand;
+      }
+
+      case 'onTable': {
+        return styles.board;
+      }
+
+      default: {
+        break;
+      }
+    }
+  };
+
   const handleOnClick = () => {
     if (isEnemy) {
       switch (card.status) {
@@ -90,10 +113,10 @@ const Card: FC<CardProps> = ({
       className={classNames(
         styles.cardContainer,
         isEnemy ? styles.enemyCard : undefined,
-        card.status === 'onTable' ? styles.board : undefined,
-        card.status === 'inDeck' ? styles.deck : undefined,
-        card.status === 'inHand' ? styles.hand : undefined,
-        card.status === 'inGrave' ? styles.grave : undefined,
+        getCardStatusClassName(card.status),
+        card.isCanAttack ? styles.canAttack : undefined,
+        activeCard ? styles.activeCardSelected : undefined,
+        activeCard === card.id && !isEnemy ? styles.isActiveCard : undefined,
       )}
       style={{
         ...(cardIndex !== undefined && total

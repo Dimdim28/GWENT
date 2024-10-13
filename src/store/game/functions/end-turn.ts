@@ -3,7 +3,7 @@ import { GameStore } from '../game.types';
 import { GameCard, Turn } from './../../../types/general';
 
 const getNewMoney = (role: Turn, newTurn: Turn, money: number) =>
-  newTurn === role ? Math.min(money + 1, 10) : money;
+  newTurn === role ? Math.min(money + 10, 30) : money;
 
 const resetAttack = (deck: GameCard[]) =>
   deck.map((card) => ({ ...card, isCanAttack: card.status === 'onTable' }));
@@ -14,8 +14,8 @@ export const endTurnAction = (get: () => GameStore): Partial<GameStore> => {
   const newTurn: Turn =
     state.currentTurn === 'Opponent' ? 'Player' : 'Opponent';
 
-  const newPlayerMoney = getNewMoney('Player', newTurn, state.player.money);
-  const newEnemyMoney = getNewMoney('Opponent', newTurn, state.enemy.money);
+  const newPlayerMoney = getNewMoney('Opponent', newTurn, state.player.money);
+  const newEnemyMoney = getNewMoney('Player', newTurn, state.enemy.money);
 
   return {
     currentTurn: newTurn,

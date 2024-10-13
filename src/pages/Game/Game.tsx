@@ -7,7 +7,8 @@ import { useGameStore } from '../../store/game/game.store';
 import styles from './Game.module.scss';
 
 export const Game = () => {
-  const { player, enemy, takeCard, currentTurn } = useGameStore();
+  const { player, enemy, takeCard, currentTurn, endTurn, playCard } =
+    useGameStore();
 
   useEffect(() => {
     const takeMultipleCards = (numberOfCards: number) => {
@@ -22,6 +23,29 @@ export const Game = () => {
     const numberOfCardsToTake = 10;
     takeMultipleCards(numberOfCardsToTake);
   }, [takeCard]);
+
+  useEffect(() => {
+    if (currentTurn === 'Opponent') {
+      const playableCards = enemy.cards.filter(
+        (card) => card.status === 'inHand' && enemy.money >= card.cost,
+      );
+
+      if (playableCards.length > 0) {
+        const randomIndex = Math.floor(Math.random() * playableCards.length);
+        const firstCard = playableCards[randomIndex];
+
+        playCard(firstCard.id);
+
+        playableCards.forEach((card, index) => {
+          if (index !== randomIndex && enemy.money >= card.cost) {
+            playCard(card.id);
+          }
+        });
+      } else {
+        endTurn();
+      }
+    }
+  }, [currentTurn, enemy.cards, enemy.money, playCard, endTurn]);
 
   return (
     <div className={styles.wrapper}>
@@ -137,6 +161,7 @@ export const Game = () => {
       <button
         className={styles.movesButton}
         disabled={currentTurn === 'Opponent'}
+        onClick={endTurn}
       >
         {currentTurn === 'Player' ? 'End move' : 'Enemy move'}
       </button>

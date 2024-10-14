@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import audioFile from '../../assets/audio/main_menu.m4a';
 import Crown from '../../assets/icons/crown';
 import { FRACTIONS } from '../../constants/fractions';
-import { classNames } from '../../helpers';
+import { classNames, getRandomBackground } from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
 
 import styles from './ChooseFraction.module.scss';
@@ -29,6 +29,12 @@ export const ChooseFraction = () => {
         <source src={audioFile} type="audio/mp3" />
       </audio>
       <div className={styles.wrapper}>
+      <div
+          className={styles.bgImage}
+          style={{
+            backgroundImage: `url(${getRandomBackground()})`,
+          }}
+        ></div>
         <div className={styles.content}>
           <h2 className={styles.title}>Choose Fraction</h2>
           <div className={styles.cards}>

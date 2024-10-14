@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
+import battleTheme1 from '../../assets/audio/battle_theme1.mp3';
 import Crown from '../../assets/icons/crown';
 import Card from '../../components/card/Card';
 import { classNames, getFractionLogo } from '../../helpers';
@@ -22,6 +23,8 @@ export const Game = () => {
     endGame,
   } = useGameStore();
   const [activecard, setActiveCard] = useState<number | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  
   useEffect(() => {
     const takeMultipleCards = (numberOfCards: number) => {
       setIsGameReady(true);
@@ -41,6 +44,16 @@ export const Game = () => {
   }, [takeCard]);
 
   useEffect(() => {
+    if (audioRef?.current) {
+      audioRef.current.currentTime = 3;
+      audioRef.current?.play();
+    }
+    return () => {
+      audioRef?.current?.pause();
+    };
+  }, []);
+
+  useEffect(() => {
     if (currentTurn === 'Opponent') {
       enemyPlayRandomCards();
       enemyAttackRandomTargets();
@@ -48,6 +61,10 @@ export const Game = () => {
   }, [currentTurn, enemyPlayRandomCards, enemyAttackRandomTargets]);
 
   return (
+    <>
+    <audio ref={audioRef} loop>
+        <source src={battleTheme1} type="audio/mp3" />
+      </audio>
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <div className={classNames(styles.userInfo, styles.enemy)}>
@@ -203,5 +220,6 @@ export const Game = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

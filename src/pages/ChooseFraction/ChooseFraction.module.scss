@@ -9,9 +9,8 @@
   padding: calc(var(--vwh) * 3);
   position: relative;
 
-  &::before {
+  .bgImage {
     content: '';
-    background-image: url('../../assets/background/background-5.png');
     background-size: cover;
     filter: brightness(0.4);
     position: absolute;

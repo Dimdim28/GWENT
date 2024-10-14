@@ -4,3 +4,4 @@ export { getFractionIcons } from './get-fraction-icons';
 export { getFractionLogo } from './get-fraction-logo';
 export { getVWHInPixels } from './get-vwh-pixels';
 export { classNames } from './classnames';
+export { getRandomBackground } from './get-random-background';

@@ -1,4 +1,5 @@
 import { FRACTIONS } from '../../constants/fractions';
+import { getRandomBackground } from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
 
 import styles from './ChooseFraction.module.scss';
@@ -17,6 +18,12 @@ export const ChooseFraction = () => {
 
   return (
     <div className={styles.wrapper}>
+      <div
+        className={styles.bgImage}
+        style={{
+          backgroundImage: `url(${getRandomBackground()})`,
+        }}
+      ></div>
       <div className={styles.content}>
         <h2 className={styles.title}>Choose Fraction</h2>
         <div className={styles.cards}>

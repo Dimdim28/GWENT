@@ -21,6 +21,7 @@ type InitialGameDataType = {
   isGameOver: boolean;
   isGameStarted: boolean;
   winner: Winner;
+  isGameReady: boolean;
 };
 
 const initialPlayerState: Hero = {
@@ -44,6 +45,7 @@ const initialGameData: InitialGameDataType = {
   isGameOver: false,
   isGameStarted: false,
   winner: null,
+  isGameReady: false,
 };
 
 export const useGameStore = create(
@@ -71,6 +73,9 @@ export const useGameStore = create(
     enemyPlayRandomCards: () => set((state) => enemyPlayRandomCards(state)),
     endTurn: () => {
       set(endTurnAction(get));
+    },
+    setIsGameReady(value) {
+      set(() => ({ isGameReady: value }));
     },
   })),
 );

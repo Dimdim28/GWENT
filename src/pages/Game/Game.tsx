@@ -14,19 +14,24 @@ export const Game = () => {
     takeCard,
     currentTurn,
     winner,
+    isGameReady,
+    setIsGameReady,
     endTurn,
     enemyAttackRandomTargets,
     enemyPlayRandomCards,
     endGame,
   } = useGameStore();
   const [activecard, setActiveCard] = useState<number | null>(null);
-
   useEffect(() => {
     const takeMultipleCards = (numberOfCards: number) => {
+      setIsGameReady(true);
       for (let i = 0; i < numberOfCards; i++) {
         setTimeout(() => {
           takeCard('Player');
           takeCard('Opponent');
+          if (i === numberOfCards - 1) {
+            setIsGameReady(false);
+          }
         }, i * 600);
       }
     };
@@ -172,20 +177,31 @@ export const Game = () => {
         {currentTurn === 'Player' ? 'End move' : 'Enemy move'}
       </button>
 
-      {winner && (
-        <div
-          className={classNames(
-            styles.gameEndedWrapper,
-            winner === 'Player' ? styles.won : styles.lost,
-          )}
-        >
-          <div className={styles.gameEndedContent}>
-            <Crown />
-            <h2> {winner === 'Enemy' ? 'Defeated!' : 'Victory'}</h2>
-            <button onClick={endGame}>Try Again</button>
-          </div>
+      <div
+        className={classNames(
+          styles.gameEndedWrapper,
+          winner === 'Player' ? styles.won : styles.lost,
+          winner ? styles.visible : undefined,
+        )}
+      >
+        <div className={styles.gameEndedContent}>
+          <Crown />
+          <h2> {winner === 'Enemy' ? 'Defeated!' : 'Victory'}</h2>
+          <button onClick={endGame}>Try Again</button>
         </div>
-      )}
+      </div>
+
+      <div
+        className={classNames(
+          styles.gameStartsWrapper,
+          isGameReady ? styles.visible : undefined,
+        )}
+      >
+        <div className={styles.gameStartsContent}>
+          <Crown />
+          <h2> {currentTurn === 'Opponent' ? 'Enemy move' : 'Your move'}</h2>
+        </div>
+      </div>
     </div>
   );
 };

@@ -7,6 +7,8 @@ export interface GameStore {
   isGameOver: boolean;
   isGameStarted: boolean;
   winner: Winner;
+  isGameReady: boolean;
+  setIsGameReady: (value: boolean) => void;
   startGame: () => void;
   endGame: () => void;
   endTurn: () => void;

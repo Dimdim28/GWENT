@@ -77,7 +77,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 20px;
+  gap: calc(var(--vwh) * 2);
 
   &.enemy {
     position: absolute;

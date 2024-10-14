@@ -1,5 +1,9 @@
+import { useRef, useState } from 'react';
+
+import audioFile from '../../assets/audio/main_menu.m4a';
+import Crown from '../../assets/icons/crown';
 import { FRACTIONS } from '../../constants/fractions';
-import { getRandomBackground } from '../../helpers';
+import { classNames } from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
 
 import styles from './ChooseFraction.module.scss';
@@ -12,41 +16,65 @@ function getRandomInt(min: number, max: number) {
 
 export const ChooseFraction = () => {
   const { startGame, setUserFraction, setEnemyFraction } = useGameStore();
+  const [isMusicStarted, setIsMusicStarted] = useState(false);
 
   const getRandomFraction = () =>
     FRACTIONS[getRandomInt(0, FRACTIONS.length - 1)].name;
 
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
   return (
-    <div className={styles.wrapper}>
-      <div
-        className={styles.bgImage}
-        style={{
-          backgroundImage: `url(${getRandomBackground()})`,
-        }}
-      ></div>
-      <div className={styles.content}>
-        <h2 className={styles.title}>Choose Fraction</h2>
-        <div className={styles.cards}>
-          {FRACTIONS.map((fraction, id) => (
-            <div
-              key={id}
-              className={styles.card}
-              onClick={() => {
-                startGame();
-                setUserFraction(fraction.name);
-                setEnemyFraction(getRandomFraction());
-              }}
-            >
-              <img
-                draggable="false"
-                src={fraction.back}
-                width="340"
-                height="475"
-              />
-            </div>
-          ))}
+    <>
+      <audio ref={audioRef} loop>
+        <source src={audioFile} type="audio/mp3" />
+      </audio>
+      <div className={styles.wrapper}>
+        <div className={styles.content}>
+          <h2 className={styles.title}>Choose Fraction</h2>
+          <div className={styles.cards}>
+            {FRACTIONS.map((fraction, id) => (
+              <div
+                key={id}
+                className={styles.card}
+                onClick={() => {
+                  startGame();
+                  setUserFraction(fraction.name);
+                  setEnemyFraction(getRandomFraction());
+                  const audio = audioRef.current;
+                  audio?.pause();
+                }}
+              >
+                <img
+                  draggable="false"
+                  src={fraction.back}
+                  width="340"
+                  height="475"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+      <div
+        className={classNames(
+          styles.gameInitiatedWrapper,
+          isMusicStarted ? undefined : styles.visible,
+        )}
+      >
+        <div className={styles.gameInitiatedContent}>
+          <Crown />
+          <h2> Welcome to Gwent Online!</h2>
+          <button
+            onClick={() => {
+              setIsMusicStarted(true);
+              const audio = audioRef.current;
+              audio?.play();
+            }}
+          >
+            Start Game
+          </button>
+        </div>
+      </div>
+    </>
   );
 };

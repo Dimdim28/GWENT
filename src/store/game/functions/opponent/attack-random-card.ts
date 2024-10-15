@@ -1,8 +1,8 @@
 import { GameStore } from '../../game.types';
 
-export const enemyAttackRandomCards = (
+export const enemyAttackRandomCards = async (
   state: GameStore,
-): Partial<GameStore> => {
+): Promise<Partial<GameStore>> => {
   const availableAttackerCards = state.enemy.cards.filter(
     (card) => card.status === 'onTable' && card.isCanAttack,
   );
@@ -11,13 +11,10 @@ export const enemyAttackRandomCards = (
     (card) => card.status === 'onTable',
   );
 
-  console.log(
-    'availableAttackerCards',
-    availableAttackerCards,
-    'availableDefenderCards',
-  );
+  const delay = (ms: number) =>
+    new Promise((resolve) => setTimeout(resolve, ms));
 
-  availableAttackerCards.forEach((attackerCard) => {
+  for (const attackerCard of availableAttackerCards) {
     if (availableDefenderCards.length > 0) {
       const randomDefenderIndex = Math.floor(
         Math.random() * availableDefenderCards.length,
@@ -25,8 +22,11 @@ export const enemyAttackRandomCards = (
       const randomDefenderCard = availableDefenderCards[randomDefenderIndex];
 
       state.attackCard(attackerCard.id, randomDefenderCard.id);
+
+      // Wait for 1 second before the next attack
+      await delay(1000);
     }
-  });
+  }
 
   state.endTurn();
 

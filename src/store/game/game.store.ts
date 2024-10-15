@@ -68,9 +68,19 @@ export const useGameStore = create(
     attackCard: (attackerId: number, targetId: number) => {
       set((state) => attackCardAction(state, attackerId, targetId));
     },
-    enemyAttackRandomTargets: () =>
-      set((state) => enemyAttackRandomCards(state)),
-    enemyPlayRandomCards: () => set((state) => enemyPlayRandomCards(state)),
+
+    enemyAttackRandomTargets: async () => {
+      const state = get();
+      await enemyAttackRandomCards(state);
+      set({});
+    },
+
+    enemyPlayRandomCards: async () => {
+      const state = get();
+      await enemyPlayRandomCards(state);
+      set({});
+    },
+
     endTurn: () => {
       set(endTurnAction(get));
     },

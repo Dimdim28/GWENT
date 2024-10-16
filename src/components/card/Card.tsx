@@ -1,6 +1,10 @@
 import { Dispatch, FC, SetStateAction } from 'react';
 
-import { classNames, getFractionIcons } from '../../helpers';
+import {
+  classNames,
+  getFractionIcons,
+  getRandomCardHoverAudio,
+} from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
 import { GameCard } from '../../types/general';
 
@@ -107,8 +111,16 @@ const Card: FC<CardProps> = ({
     }
   };
 
+  const onHoverCard = () => {
+    const audio = new Audio();
+    audio.src = getRandomCardHoverAudio();
+    audio.preload = 'auto';
+    audio.play();
+  };
+
   return (
     <div
+      onMouseEnter={onHoverCard}
       onClick={handleOnClick}
       className={classNames(
         styles.cardContainer,

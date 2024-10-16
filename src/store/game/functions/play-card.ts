@@ -1,3 +1,4 @@
+import playCardAudio from '../../../assets/audio/play_card.m4a';
 import { GameStore } from '../game.types';
 
 export const playCardAction = (
@@ -15,6 +16,11 @@ export const playCardAction = (
     currentCard.status = 'onTable';
     currentPlayer.money -= currentCard.cost;
     currentPlayer.points += currentCard.value;
+
+    const audio = new Audio();
+    audio.src = playCardAudio;
+    audio.preload = 'auto';
+    audio.play();
   }
 
   return isPlayerTurn ? { player: currentPlayer } : { enemy: currentPlayer };

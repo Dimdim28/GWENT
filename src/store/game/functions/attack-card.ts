@@ -1,3 +1,4 @@
+import attacCardAudio from '../../../assets/audio/attack_card.m4a';
 import { findCardById, removeCardById } from '../../../helpers';
 import { GameStore } from '../game.types';
 
@@ -20,7 +21,10 @@ export const attackCardAction = (
     const targetValue = target.value;
     const attackerValue = attacker.value;
 
-    console.log('attack', attackerValue, 'target', targetValue);
+    const audio = new Audio();
+    audio.src = attacCardAudio;
+    audio.preload = 'auto';
+    audio.play();
 
     target.value -= Math.min(attackerValue, targetValue);
 

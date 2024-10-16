@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import battleTheme1 from '../../assets/audio/battle_theme1.mp3';
+import takeCardAudio from '../../assets/audio/take_card.m4a';
 import Crown from '../../assets/icons/crown';
 import Card from '../../components/card/Card';
 import { classNames, getFractionLogo } from '../../helpers';
@@ -30,6 +31,11 @@ export const Game = () => {
       setIsGameReady(true);
       for (let i = 0; i < numberOfCards; i++) {
         setTimeout(() => {
+          const audio = new Audio();
+          audio.src = takeCardAudio;
+          audio.preload = 'auto';
+          audio.play();
+
           takeCard('Player');
           takeCard('Opponent');
           if (i === numberOfCards - 1) {
@@ -44,12 +50,16 @@ export const Game = () => {
   }, [takeCard]);
 
   useEffect(() => {
-    if (audioRef?.current) {
-      audioRef.current.currentTime = 3;
-      audioRef.current?.play();
+    const audio = audioRef?.current;
+    if (audio) {
+      audio.currentTime = 3;
+      audio.volume = 0.2;
+      audio.play();
     }
     return () => {
-      audioRef?.current?.pause();
+      if (audio) {
+        audio.pause();
+      }
     };
   }, []);
 

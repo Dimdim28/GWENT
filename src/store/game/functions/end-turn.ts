@@ -1,3 +1,6 @@
+import endTurnAudio from '../../../assets/audio/change_turn.m4a';
+import loserAudio from '../../../assets/audio/loser.m4a';
+import winnerAudio from '../../../assets/audio/winner.m4a';
 import { GameStore } from '../game.types';
 
 import { GameCard, Turn, Winner } from './../../../types/general';
@@ -41,6 +44,18 @@ export const endTurnAction = (get: () => GameStore): Partial<GameStore> => {
     state.currentTurn === 'Opponent' ? 'Player' : 'Opponent';
 
   if (winner) {
+    if (winner === 'Enemy') {
+      const audio = new Audio();
+      audio.src = loserAudio;
+      audio.preload = 'auto';
+      audio.play();
+    } else {
+      const audio = new Audio();
+      audio.src = winnerAudio;
+      audio.preload = 'auto';
+      audio.play();
+    }
+
     return {
       currentTurn: newTurn,
       winner,
@@ -49,6 +64,11 @@ export const endTurnAction = (get: () => GameStore): Partial<GameStore> => {
 
   const newPlayerMoney = getNewMoney('Opponent', newTurn, state.player.money);
   const newEnemyMoney = getNewMoney('Player', newTurn, state.enemy.money);
+
+  const audio = new Audio();
+  audio.src = endTurnAudio;
+  audio.preload = 'auto';
+  audio.play();
 
   return {
     currentTurn: newTurn,

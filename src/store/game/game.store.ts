@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
+import { randomTurn } from '../../helpers';
 import { Fraction, Hero, Turn, Winner } from '../../types/general';
 
 import {
@@ -41,17 +42,22 @@ const initialEnemyState: Hero = {
 const initialGameData: InitialGameDataType = {
   player: initialPlayerState,
   enemy: initialEnemyState,
-  currentTurn: 'Player',
+  currentTurn: randomTurn(),
   isGameOver: false,
   isGameStarted: false,
   winner: null,
-  isGameReady: false,
+  isGameReady: true,
 };
 
 export const useGameStore = create(
   devtools<GameStore>((set, get) => ({
     ...initialGameData,
-    startGame: () => set({ ...initialGameData, isGameStarted: true }),
+    startGame: () =>
+      set({
+        ...initialGameData,
+        isGameStarted: true,
+        currentTurn: randomTurn(),
+      }),
     takeCard: (role: Turn) => set((state) => takeCardAction(state, role)),
     setUserFraction: (fraction: Fraction) =>
       set((state) => ({

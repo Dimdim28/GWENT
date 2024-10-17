@@ -47,7 +47,7 @@ export const Game = () => {
 
     const numberOfCardsToTake = 8;
     takeMultipleCards(numberOfCardsToTake);
-  }, [takeCard]);
+  }, [setIsGameReady, takeCard]);
 
   useEffect(() => {
     const audio = audioRef?.current;
@@ -64,6 +64,7 @@ export const Game = () => {
   }, []);
 
   useEffect(() => {
+    if (isGameReady) return;
     if (currentTurn === 'Opponent') {
       async function enemyTurn() {
         await enemyPlayRandomCards();
@@ -71,7 +72,12 @@ export const Game = () => {
       }
       enemyTurn();
     }
-  }, [currentTurn, enemyPlayRandomCards, enemyAttackRandomTargets]);
+  }, [
+    currentTurn,
+    enemyPlayRandomCards,
+    enemyAttackRandomTargets,
+    isGameReady,
+  ]);
 
   return (
     <>

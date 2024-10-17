@@ -64,6 +64,16 @@ export const Game = () => {
   }, []);
 
   useEffect(() => {
+    if (!winner) return;
+
+    const audio = audioRef?.current;
+    if (audio) {
+      audio.currentTime = 3;
+      audio.pause();
+    }
+  }, [winner]);
+
+  useEffect(() => {
     if (isGameReady) return;
     if (currentTurn === 'Opponent') {
       async function enemyTurn() {

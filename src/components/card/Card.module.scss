@@ -2,12 +2,18 @@
   width: calc(var(--vwh) * 6);
   height: calc(var(--vwh) * 9);
   perspective: calc(var(--vwh) * 9);
+  position: absolute;
+  transition:
+    box-shadow var(--transition-time) ease,
+    transform var(--transition-time) ease,
+    left var(--transition-time) ease,
+    right var(--transition-time) ease,
+    top var(--transition-time) ease,
+    bottom var(--transition-time) ease;
 
   &.board {
-    position: relative;
     transform: rotateY(0deg);
     box-shadow: 0 0 10px transparent;
-    transition: box-shadow var(--transition-time) ease;
 
     &.canAttack {
       &:hover {
@@ -41,41 +47,37 @@
   }
 
   &.deck {
-    position: absolute;
-
     .card {
       transform: rotateY(180deg);
     }
   }
 
   &.hand {
-    position: absolute;
-    cursor: pointer;
-    transition: transform var(--transition-time) linear;
-    &:hover {
-      z-index: 4;
-      .front::after {
-        opacity: 1;
-      }
-    }
-
     &.enemyCard {
-      cursor: default;
-      &:hover {
-        z-index: inherit;
-        .front::after {
-          opacity: 0;
-        }
-      }
       .card {
         transform: rotateY(180deg);
       }
     }
+    &.playerCard {
+      cursor: pointer;
+
+      &:hover {
+        z-index: 4;
+        transform: rotate(0) !important;
+        bottom: calc(0.5 * var(--vwh)) !important;
+
+        .front::after {
+          opacity: 1;
+        }
+      }
+    }
   }
 
-  // &.grave {
-  //   position: absolute;
-  // }
+  &.grave {
+    .card {
+      transform: rotateY(180deg);
+    }
+  }
 }
 
 .card {
@@ -83,7 +85,7 @@
   height: inherit;
   transform-style: preserve-3d;
   will-change: transform;
-  transition: transform 0.6s ease;
+  transition: transform var(--transition-time) ease;
 }
 
 // .cardContainer:hover {

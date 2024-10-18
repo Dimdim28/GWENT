@@ -35,40 +35,34 @@ const checkWinner = (state: GameStore): Winner => {
   return null;
 };
 
-export const endTurnAction = (get: () => GameStore): Partial<GameStore> => {
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export const endTurnAction = async (
+  get: () => GameStore,
+): Promise<Partial<GameStore>> => {
   const state = get();
-
   const winner = checkWinner(state);
-
   const newTurn: Turn =
     state.currentTurn === 'Opponent' ? 'Player' : 'Opponent';
 
   if (winner) {
-    if (winner === 'Enemy') {
-      const audio = new Audio();
-      audio.src = loserAudio;
-      audio.preload = 'auto';
-      audio.play();
-    } else {
-      const audio = new Audio();
-      audio.src = winnerAudio;
-      audio.preload = 'auto';
-      audio.play();
-    }
-
+    const audio = new Audio(winner === 'Enemy' ? loserAudio : winnerAudio);
+    audio.preload = 'auto';
+    audio.play();
     return {
       currentTurn: newTurn,
       winner,
     };
   }
 
+  await delay(100);
+  const endTurnAudioInstance = new Audio(endTurnAudio);
+  endTurnAudioInstance.preload = 'auto';
+  endTurnAudioInstance.play();
+  await delay(100);
+
   const newPlayerMoney = getNewMoney('Opponent', newTurn, state.player.money);
   const newEnemyMoney = getNewMoney('Player', newTurn, state.enemy.money);
-
-  const audio = new Audio();
-  audio.src = endTurnAudio;
-  audio.preload = 'auto';
-  audio.play();
 
   return {
     currentTurn: newTurn,

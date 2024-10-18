@@ -28,7 +28,7 @@ export const enemyAttackRandomCards = async (
     }
   }
 
-  state.endTurn();
+  await state.endTurn();
 
   return {};
 };

@@ -7,3 +7,5 @@ export { classNames } from './classnames';
 export { getRandomBackground } from './get-random-background';
 export { getRandomCardHoverAudio } from './get-random-card-hover-audio';
 export { randomTurn } from './random-turn';
+export { getCardIndex } from './get-card-index';
+export { getCardsWithStatusAmount } from './get-cards-with-status-amount';

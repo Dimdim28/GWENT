@@ -4,10 +4,17 @@ import battleTheme1 from '../../assets/audio/battle_theme1.mp3';
 import takeCardAudio from '../../assets/audio/take_card.m4a';
 import Crown from '../../assets/icons/crown';
 import Card from '../../components/card/Card';
-import { classNames, getFractionLogo } from '../../helpers';
+import {
+  classNames,
+  getCardIndex,
+  getCardsWithStatusAmount,
+  getFractionLogo,
+} from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
 
 import styles from './Game.module.scss';
+
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const Game = () => {
   const {
@@ -30,7 +37,7 @@ export const Game = () => {
     const takeMultipleCards = (numberOfCards: number) => {
       setIsGameReady(true);
       for (let i = 0; i < numberOfCards; i++) {
-        setTimeout(() => {
+        setTimeout(async () => {
           const audio = new Audio();
           audio.src = takeCardAudio;
           audio.preload = 'auto';
@@ -39,6 +46,7 @@ export const Game = () => {
           takeCard('Player');
           takeCard('Opponent');
           if (i === numberOfCards - 1) {
+            await delay(1000);
             setIsGameReady(false);
           }
         }, i * 600);
@@ -117,85 +125,29 @@ export const Game = () => {
             </div>
           </div>
 
-          <p>player - {player.fraction}</p>
-          <p>enemy - {enemy.fraction}</p>
+          {enemy.cards.map((card, id) => (
+            <Card
+              key={id}
+              card={card}
+              isEnemy={true}
+              cardIndex={getCardIndex(enemy.cards, card.id, card.status)}
+              activeCard={activecard}
+              setActiveCard={setActiveCard}
+              total={getCardsWithStatusAmount(enemy.cards, card.status)}
+            />
+          ))}
 
-          <div className={classNames(styles.cards, styles.enemy)}>
-            {enemy.cards
-              .filter((card) => card.status === 'onTable')
-              .map((card, id) => (
-                <Card
-                  key={id}
-                  card={card}
-                  activeCard={activecard}
-                  isEnemy
-                  setActiveCard={setActiveCard}
-                />
-              ))}
-          </div>
-
-          <div className={classNames(styles.cards, styles.player)}>
-            {player.cards
-              .filter((card) => card.status === 'onTable')
-              .map((card, id) => (
-                <Card
-                  key={id}
-                  card={card}
-                  activeCard={activecard}
-                  setActiveCard={setActiveCard}
-                />
-              ))}
-          </div>
-
-          <div className={classNames(styles.unUsedCards, styles.player)}>
-            {player.cards
-              .filter((card) => card.status === 'inDeck')
-              .map((card, id) => (
-                <Card key={id} card={card} />
-              ))}
-          </div>
-
-          <div className={classNames(styles.unUsedCards, styles.enemy)}>
-            {enemy.cards
-              .filter((card) => card.status === 'inDeck')
-              .map((card, id) => (
-                <Card key={id} card={card} />
-              ))}
-          </div>
-
-          <div className={classNames(styles.handCards, styles.player)}>
-            {player.cards
-              .filter((card) => card.status === 'inHand')
-              .map((card, id) => (
-                <Card
-                  key={id}
-                  card={card}
-                  cardIndex={id}
-                  total={
-                    player.cards.filter((card) => card.status === 'inHand')
-                      .length
-                  }
-                  isEnemy={false}
-                />
-              ))}
-          </div>
-
-          <div className={classNames(styles.handCards, styles.enemy)}>
-            {enemy.cards
-              .filter((card) => card.status === 'inHand')
-              .map((card, id) => (
-                <Card
-                  key={id}
-                  card={card}
-                  cardIndex={id}
-                  total={
-                    enemy.cards.filter((card) => card.status === 'inHand')
-                      .length
-                  }
-                  isEnemy={true}
-                />
-              ))}
-          </div>
+          {player.cards.map((card, id) => (
+            <Card
+              key={id}
+              card={card}
+              isEnemy={false}
+              cardIndex={getCardIndex(player.cards, card.id, card.status)}
+              activeCard={activecard}
+              setActiveCard={setActiveCard}
+              total={getCardsWithStatusAmount(player.cards, card.status)}
+            />
+          ))}
         </div>
         <div className={styles.divider}></div>
         <div

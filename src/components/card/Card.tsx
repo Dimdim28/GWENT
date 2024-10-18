@@ -12,36 +12,123 @@ import styles from './Card.module.scss';
 
 interface CardProps {
   card: GameCard;
-  cardIndex?: number;
-  total?: number;
-  isEnemy?: boolean;
+  cardIndex: number;
+  total: number;
+  isEnemy: boolean;
   activeCard?: number | null;
   setActiveCard?: Dispatch<SetStateAction<number | null>>;
 }
 
-const getRotationIndex = (index: number, total: number) => {
-  const middle = Math.floor(total / 2);
+const getTranslateIndex = (index: number, total: number) => {
+  const middle = total / 2;
+
   if (total % 2 === 0) {
-    return index < middle ? index - middle : index - middle + 1;
+    return index - middle + 0.5;
   } else {
-    return index === middle
-      ? 0
-      : index < middle
-        ? index - middle
-        : index - middle;
+    return index - Math.floor(middle);
   }
 };
 
-const getTransformOrigin = (index: number, total: number) => {
+const getTransformOrigin = (index: number, total: number, isEnemy: boolean) => {
   const middle = Math.floor(total / 2);
+
   if (total % 2 === 0) {
-    return index < middle ? 'right bottom' : 'left bottom';
+    if (isEnemy) {
+      return index < middle ? 'right bottom' : 'left bottom';
+    } else {
+      return index < middle ? 'left bottom' : 'right bottom';
+    }
   } else {
-    return index === middle
-      ? 'center'
-      : index < middle
-        ? 'right bottom'
-        : 'left bottom';
+    if (index === middle) return 'center';
+
+    if (isEnemy) {
+      return index < middle ? 'right bottom' : 'left bottom';
+    } else {
+      return index < middle ? 'left bottom' : 'right bottom';
+    }
+  }
+};
+
+const getCardRotation = (
+  index: number,
+  total: number,
+  status: GameCard['status'],
+) => {
+  const translationIndex = getTranslateIndex(total - index - 1, total);
+
+  if (status === 'inHand') {
+    return { transform: `rotate(${translationIndex * 6}deg)` };
+  }
+};
+
+const getCardPosition = (
+  isEnemy: boolean,
+  index: number,
+  total: number,
+  status: GameCard['status'],
+) => {
+  const translationIndex = getTranslateIndex(index, total);
+
+  if (status === 'inDeck') {
+    if (isEnemy) {
+      return {
+        top: `calc(var(--vwh) * 0.5)`,
+        left: `calc(var(--vwh) * 0.5)`,
+      };
+    } else {
+      return {
+        bottom: `calc(var(--vwh) * 0.5)`,
+        right: `calc(var(--vwh) * 0.5)`,
+      };
+    }
+  } else if (status === 'inHand') {
+    let verticalOffset = 0;
+
+    if (index === 0) {
+      verticalOffset = 0.25;
+    } else if (index === 1) {
+      verticalOffset = 0.08;
+    } else if (index === total - 2) {
+      verticalOffset = 0.08;
+    } else if (index === total - 1) {
+      verticalOffset = 0.25;
+    }
+
+    if (isEnemy) {
+      return {
+        top: `calc(${-4 - 4 * verticalOffset} * var(--vwh))`,
+        left: `calc(50% - var(--vwh) * 3 + ${translationIndex * 3} * var(--vwh))`,
+      };
+    } else {
+      return {
+        bottom: `calc(${-4 - 4 * verticalOffset} * var(--vwh) )`,
+        right: `calc(50% - var(--vwh) * 3 + ${translationIndex * 3} * var(--vwh))`,
+      };
+    }
+  } else if (status === 'onTable') {
+    if (isEnemy) {
+      return {
+        top: `calc(50% - var(--vwh) * 9.5)`,
+        left: `calc(50% - var(--vwh) * 3 + ${translationIndex * 7} * var(--vwh) )`,
+      };
+    } else {
+      return {
+        bottom: `calc(50% - var(--vwh) * 9.5)`,
+        right: `calc(50% - var(--vwh) * 3 - ${translationIndex * 7} * var(--vwh) )`,
+      };
+    }
+  } else {
+    if (isEnemy) {
+      return {
+        top: `calc(-9* var(--vwh))`,
+        left: `calc(100% + var(--vwh) * 6)`,
+      };
+    } else {
+      return {
+        bottom: `calc(-9 * var(--vwh))`,
+        right: `calc(100% + var(--vwh) * 6)`,
+      };
+    }
   }
 };
 
@@ -124,25 +211,16 @@ const Card: FC<CardProps> = ({
       onClick={handleOnClick}
       className={classNames(
         styles.cardContainer,
-        isEnemy ? styles.enemyCard : undefined,
+        isEnemy ? styles.enemyCard : styles.playerCard,
         getCardStatusClassName(card.status),
         card.isCanAttack ? styles.canAttack : undefined,
         activeCard ? styles.activeCardSelected : undefined,
         activeCard === card.id && !isEnemy ? styles.isActiveCard : undefined,
       )}
       style={{
-        ...(cardIndex !== undefined && total
-          ? {
-              transform: `translateX(${getRotationIndex(cardIndex, total) * 50}px)
-                          rotate(${getRotationIndex(cardIndex, total) * 6}deg)`,
-
-              ...(isEnemy !== undefined
-                ? {
-                    transformOrigin: getTransformOrigin(cardIndex, total),
-                  }
-                : {}),
-            }
-          : {}),
+        ...getCardPosition(isEnemy, cardIndex, total, card.status),
+        ...getCardRotation(cardIndex, total, card.status),
+        transformOrigin: getTransformOrigin(cardIndex, total, isEnemy),
       }}
     >
       <div className={styles.card}>

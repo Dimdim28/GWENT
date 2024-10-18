@@ -96,23 +96,6 @@
   }
 }
 
-.unUsedCards {
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  width: calc(var(--vwh) * 6);
-  height: calc(var(--vwh) * 9);
-  &.enemy {
-    top: calc(var(--vwh) * 0.5);
-    left: calc(var(--vwh) * 0.5);
-  }
-
-  &.player {
-    right: calc(var(--vwh) * 0.5);
-    bottom: calc(var(--vwh) * 0.5);
-  }
-}
-
 .handCards {
   position: absolute;
   padding: 0;
@@ -372,7 +355,7 @@
   right: 0;
   bottom: 0;
   z-index: 6;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;

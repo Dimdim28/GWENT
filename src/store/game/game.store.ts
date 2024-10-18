@@ -87,9 +87,11 @@ export const useGameStore = create(
       set({});
     },
 
-    endTurn: () => {
-      set(endTurnAction(get));
+    endTurn: async () => {
+      const newState = await endTurnAction(get);
+      set(newState);
     },
+
     setIsGameReady(value) {
       set(() => ({ isGameReady: value }));
     },

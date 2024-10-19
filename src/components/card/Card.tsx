@@ -239,7 +239,7 @@ const Card: FC<CardProps> = ({
         transformOrigin: getTransformOrigin(cardIndex, total, isEnemy),
       }}
     >
-      {card.status === 'onTable' &&
+      {['onTable', 'inGrave'].includes(card.status) &&
       attackedCard &&
       isEnemy === attackedCard.isEnemy &&
       card.id === attackedCard.id ? (

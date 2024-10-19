@@ -7,7 +7,7 @@ export const enemyAttackRandomCards = async (
     (card) => card.status === 'onTable' && card.isCanAttack,
   );
 
-  const availableDefenderCards = state.player.cards.filter(
+  let availableDefenderCards = state.player.cards.filter(
     (card) => card.status === 'onTable',
   );
 
@@ -15,30 +15,32 @@ export const enemyAttackRandomCards = async (
     new Promise((resolve) => setTimeout(resolve, ms));
 
   for (const attackerCard of availableAttackerCards) {
-    if (availableDefenderCards.length > 0) {
-      const randomDefenderIndex = Math.floor(
-        Math.random() * availableDefenderCards.length,
-      );
-      const randomDefenderCard = availableDefenderCards[randomDefenderIndex];
-
-      state.setAtackedCard(null);
-
-      await delay(300);
-
-      state.setAtackedCard({
-        isEnemy: false,
-        id: randomDefenderCard.id,
-        decreasedPointsOn: Math.min(
-          randomDefenderCard.value,
-          attackerCard.value,
-        ),
-      });
-
-      state.attackCard(attackerCard.id, randomDefenderCard.id);
-
-      // Wait for 1 second before the next attack
-      await delay(1000);
+    if (availableDefenderCards.length === 0) {
+      break;
     }
+
+    const randomDefenderIndex = Math.floor(
+      Math.random() * availableDefenderCards.length,
+    );
+    const randomDefenderCard = availableDefenderCards[randomDefenderIndex];
+
+    state.setAtackedCard(null);
+
+    await delay(300);
+
+    state.setAtackedCard({
+      isEnemy: false,
+      id: randomDefenderCard.id,
+      decreasedPointsOn: Math.min(randomDefenderCard.value, attackerCard.value),
+    });
+
+    state.attackCard(attackerCard.id, randomDefenderCard.id);
+
+    availableDefenderCards = availableDefenderCards.filter(
+      (card) => card.id !== randomDefenderCard.id,
+    );
+
+    await delay(1000);
   }
 
   await state.endTurn();

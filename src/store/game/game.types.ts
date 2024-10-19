@@ -8,6 +8,18 @@ export interface GameStore {
   isGameStarted: boolean;
   winner: Winner;
   isGameReady: boolean;
+  attackedCard: {
+    isEnemy: boolean;
+    id: number;
+    decreasedPointsOn: number;
+  } | null;
+  setAtackedCard: (
+    object: {
+      isEnemy: boolean;
+      id: number;
+      decreasedPointsOn: number;
+    } | null,
+  ) => void;
   setIsGameReady: (value: boolean) => void;
   startGame: () => void;
   endGame: () => void;

@@ -15,8 +15,8 @@ interface CardProps {
   cardIndex: number;
   total: number;
   isEnemy: boolean;
-  activeCard?: number | null;
-  setActiveCard?: Dispatch<SetStateAction<number | null>>;
+  activeCard?: GameCard | null;
+  setActiveCard?: Dispatch<SetStateAction<GameCard | null>>;
 }
 
 const getTranslateIndex = (index: number, total: number) => {
@@ -140,7 +140,8 @@ const Card: FC<CardProps> = ({
   activeCard,
   setActiveCard,
 }) => {
-  const { playCard, currentTurn, attackCard } = useGameStore();
+  const { playCard, currentTurn, attackCard, setAtackedCard, attackedCard } =
+    useGameStore();
   const { points, cost, back } = getFractionIcons(card.fraction);
 
   const getCardStatusClassName = (status: GameCard['status']) => {
@@ -166,12 +167,19 @@ const Card: FC<CardProps> = ({
     }
   };
 
-  const handleOnClick = () => {
+  const handleOnClick = async () => {
     if (isEnemy) {
       switch (card.status) {
         case 'onTable':
           if (activeCard && setActiveCard) {
-            attackCard(activeCard, card.id);
+            if (activeCard.isCanAttack) {
+              setAtackedCard({
+                isEnemy: true,
+                id: card.id,
+                decreasedPointsOn: Math.min(card.value, activeCard.value),
+              });
+            }
+            attackCard(activeCard.id, card.id);
             setActiveCard(null);
           }
           break;
@@ -187,7 +195,7 @@ const Card: FC<CardProps> = ({
 
           case 'onTable':
             if (setActiveCard) {
-              setActiveCard(card.id);
+              setActiveCard(card);
             }
 
             break;
@@ -215,7 +223,9 @@ const Card: FC<CardProps> = ({
         getCardStatusClassName(card.status),
         card.isCanAttack ? styles.canAttack : undefined,
         activeCard ? styles.activeCardSelected : undefined,
-        activeCard === card.id && !isEnemy ? styles.isActiveCard : undefined,
+        activeCard?.id === card.id && !isEnemy
+          ? styles.isActiveCard
+          : undefined,
       )}
       style={{
         ...getCardPosition(isEnemy, cardIndex, total, card.status),
@@ -223,6 +233,15 @@ const Card: FC<CardProps> = ({
         transformOrigin: getTransformOrigin(cardIndex, total, isEnemy),
       }}
     >
+      {card.status === 'onTable' &&
+      attackedCard &&
+      isEnemy === attackedCard.isEnemy &&
+      card.id === attackedCard.id ? (
+        <div className={styles.decreasePointsOn}>
+          -{attackedCard.decreasedPointsOn}
+        </div>
+      ) : null}
+
       <div className={styles.card}>
         <div className={classNames(styles.side, styles.front)}>
           <div className={styles.character}>

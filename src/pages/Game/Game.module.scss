@@ -221,7 +221,7 @@
   border: 2px solid var(--title-green-color);
   cursor: pointer;
   transition:
-    background-color var(--transition-time) ease-in,
+    background var(--transition-time) ease-in,
     color var(--transition-time) ease-in,
     border-color var(--transition-time) ease-in;
   border-radius: 15%;
@@ -234,12 +234,12 @@
   &:disabled {
     pointer-events: none;
     color: var(--title-white-color);
-    background: var(--title-green-color);
-    border: 2px solid var(--title-green-color);
+    background: var(--bg-shadow-lost);
+    border: 2px solid var(--bg-shadow-lost);
     &:hover {
       color: var(--title-white-color);
-      background: var(--title-green-color);
-      border: 2px solid var(--title-green-color);
+      background: var(--bg-shadow-lost);
+      border: 2px solid var(--bg-shadow-lost);
     }
   }
 }

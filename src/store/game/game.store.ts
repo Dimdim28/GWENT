@@ -23,6 +23,11 @@ type InitialGameDataType = {
   isGameStarted: boolean;
   winner: Winner;
   isGameReady: boolean;
+  attackedCard: null | {
+    isEnemy: boolean;
+    id: number;
+    decreasedPointsOn: number;
+  };
 };
 
 const initialPlayerState: Hero = {
@@ -47,6 +52,7 @@ const initialGameData: InitialGameDataType = {
   isGameStarted: false,
   winner: null,
   isGameReady: true,
+  attackedCard: null,
 };
 
 export const useGameStore = create(
@@ -71,8 +77,15 @@ export const useGameStore = create(
     playCard: (cardId: number) => {
       set((state) => playCardAction(state, cardId));
     },
-    attackCard: (attackerId: number, targetId: number) => {
-      set((state) => attackCardAction(state, attackerId, targetId));
+    attackCard: async (attackerId: number, targetId: number) => {
+      const state = get();
+
+      const result = await attackCardAction(state, attackerId, targetId);
+
+      set((state) => ({
+        ...state,
+        ...result,
+      }));
     },
 
     enemyAttackRandomTargets: async () => {
@@ -95,5 +108,13 @@ export const useGameStore = create(
     setIsGameReady(value) {
       set(() => ({ isGameReady: value }));
     },
+
+    setAtackedCard: (
+      object: {
+        isEnemy: boolean;
+        id: number;
+        decreasedPointsOn: number;
+      } | null,
+    ) => set(() => ({ attackedCard: object })),
   })),
 );

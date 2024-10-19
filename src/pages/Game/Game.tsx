@@ -11,6 +11,7 @@ import {
   getFractionLogo,
 } from '../../helpers';
 import { useGameStore } from '../../store/game/game.store';
+import { GameCard } from '../../types/general';
 
 import styles from './Game.module.scss';
 
@@ -30,7 +31,8 @@ export const Game = () => {
     enemyPlayRandomCards,
     endGame,
   } = useGameStore();
-  const [activecard, setActiveCard] = useState<number | null>(null);
+  const [activecard, setActiveCard] = useState<GameCard | null>(null);
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
@@ -174,7 +176,7 @@ export const Game = () => {
           disabled={currentTurn === 'Opponent'}
           onClick={endTurn}
         >
-          {currentTurn === 'Player' ? 'End move' : 'Enemy move'}
+          {currentTurn === 'Player' ? 'End turn' : 'Enemy turn'}
         </button>
 
         <div

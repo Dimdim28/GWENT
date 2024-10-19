@@ -80,6 +80,48 @@
   }
 }
 
+.decreasePointsOn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  font-size: calc(var(--vwh) * 3);
+  font-family: GWENT, sans-serif;
+  color: var(--border-red-color);
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-shadow-enemy),
+    var(--border-red-color),
+    var(--bg-shadow-lost)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+  text-align: center;
+  opacity: 0;
+
+  animation: slideTop var(--transition-time) forwards ease;
+  transition: all var(--transition-time);
+  @keyframes slideTop {
+    0% {
+      opacity: 0;
+    }
+
+    40% {
+      opacity: 1;
+    }
+
+    80% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -150%);
+      top: 0%;
+      opacity: 0;
+    }
+  }
+}
 .card {
   width: inherit;
   height: inherit;

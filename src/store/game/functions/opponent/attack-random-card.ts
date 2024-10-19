@@ -21,6 +21,15 @@ export const enemyAttackRandomCards = async (
       );
       const randomDefenderCard = availableDefenderCards[randomDefenderIndex];
 
+      state.setAtackedCard({
+        isEnemy: false,
+        id: randomDefenderCard.id,
+        decreasedPointsOn: Math.min(
+          randomDefenderCard.value,
+          attackerCard.value,
+        ),
+      });
+
       state.attackCard(attackerCard.id, randomDefenderCard.id);
 
       // Wait for 1 second before the next attack

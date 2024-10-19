@@ -2,11 +2,11 @@ import attacCardAudio from '../../../assets/audio/attack_card.m4a';
 import { findCardById, removeCardById } from '../../../helpers';
 import { GameStore } from '../game.types';
 
-export const attackCardAction = (
+export const attackCardAction = async (
   state: GameStore,
   attackerId: number,
   targetId: number,
-): Partial<GameStore> => {
+): Promise<Partial<GameStore>> => {
   const isPlayerAttack = state.currentTurn === 'Player';
 
   const attacker = isPlayerAttack

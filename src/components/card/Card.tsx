@@ -132,6 +132,8 @@ const getCardPosition = (
   }
 };
 
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const Card: FC<CardProps> = ({
   card,
   cardIndex,
@@ -173,6 +175,10 @@ const Card: FC<CardProps> = ({
         case 'onTable':
           if (activeCard && setActiveCard) {
             if (activeCard.isCanAttack) {
+              setAtackedCard(null);
+
+              await delay(300);
+
               setAtackedCard({
                 isEnemy: true,
                 id: card.id,

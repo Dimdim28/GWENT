@@ -21,6 +21,10 @@ export const enemyAttackRandomCards = async (
       );
       const randomDefenderCard = availableDefenderCards[randomDefenderIndex];
 
+      state.setAtackedCard(null);
+
+      await delay(300);
+
       state.setAtackedCard({
         isEnemy: false,
         id: randomDefenderCard.id,

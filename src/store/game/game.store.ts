@@ -109,7 +109,7 @@ export const useGameStore = create(
       set(() => ({ isGameReady: value }));
     },
 
-    setAtackedCard: (
+    setAttackedCard: (
       object: {
         isEnemy: boolean;
         id: number;

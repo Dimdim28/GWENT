@@ -24,21 +24,23 @@ export const enemyAttackRandomCards = async (
     );
     const randomDefenderCard = availableDefenderCards[randomDefenderIndex];
 
-    state.setAtackedCard(null);
+    state.setAttackedCard(null);
 
     await delay(300);
 
-    state.setAtackedCard({
+    state.setAttackedCard({
       isEnemy: false,
       id: randomDefenderCard.id,
       decreasedPointsOn: Math.min(randomDefenderCard.value, attackerCard.value),
     });
 
-    state.attackCard(attackerCard.id, randomDefenderCard.id);
+    if (attackerCard.value >= randomDefenderCard.value) {
+      availableDefenderCards = availableDefenderCards.filter(
+        (card) => card.id !== randomDefenderCard.id,
+      );
+    }
 
-    availableDefenderCards = availableDefenderCards.filter(
-      (card) => card.id !== randomDefenderCard.id,
-    );
+    state.attackCard(attackerCard.id, randomDefenderCard.id);
 
     await delay(1000);
   }

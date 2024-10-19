@@ -13,7 +13,7 @@ export interface GameStore {
     id: number;
     decreasedPointsOn: number;
   } | null;
-  setAtackedCard: (
+  setAttackedCard: (
     object: {
       isEnemy: boolean;
       id: number;

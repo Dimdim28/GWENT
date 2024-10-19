@@ -142,7 +142,7 @@ const Card: FC<CardProps> = ({
   activeCard,
   setActiveCard,
 }) => {
-  const { playCard, currentTurn, attackCard, setAtackedCard, attackedCard } =
+  const { playCard, currentTurn, attackCard, setAttackedCard, attackedCard } =
     useGameStore();
   const { points, cost, back } = getFractionIcons(card.fraction);
 
@@ -175,11 +175,11 @@ const Card: FC<CardProps> = ({
         case 'onTable':
           if (activeCard && setActiveCard) {
             if (activeCard.isCanAttack) {
-              setAtackedCard(null);
+              setAttackedCard(null);
 
               await delay(300);
 
-              setAtackedCard({
+              setAttackedCard({
                 isEnemy: true,
                 id: card.id,
                 decreasedPointsOn: Math.min(card.value, activeCard.value),

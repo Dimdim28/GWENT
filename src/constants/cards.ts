@@ -22,20 +22,31 @@ import monster_alp from '../assets/cards-static/monster_alp.jpg';
 import monster_arianna from '../assets/cards-static/monster_arianna.jpg';
 import monster_auberon from '../assets/cards-static/monster_auberon.jpg';
 import monster_bargest from '../assets/cards-static/monster_bargest.jpg';
+import monster_bes from '../assets/cards-static/monster_bes.jpg';
+import monster_dagon from '../assets/cards-static/monster_dagon.jpg';
 import monster_detlaph from '../assets/cards-static/monster_detlaph.jpg';
 import monster_eredin from '../assets/cards-static/monster_eredin.jpg';
 import monster_foglet from '../assets/cards-static/monster_foglet.jpg';
+import monster_gernihora from '../assets/cards-static/monster_gernihora.jpg';
 import monster_goliafr from '../assets/cards-static/monster_goliaf.jpg';
 import monster_griphon from '../assets/cards-static/monster_griphon.jpg';
 import monster_grot from '../assets/cards-static/monster_grot.jpg';
 import monster_harpiya from '../assets/cards-static/monster_harpiya.jpg';
+import monster_hidden from '../assets/cards-static/monster_hidden.jpg';
 import monster_imlerikh from '../assets/cards-static/monster_imlerikh.jpg';
+import monster_karantir from '../assets/cards-static/monster_karantir.jpg';
 import monster_keyran from '../assets/cards-static/monster_keyran.jpg';
+import monster_kuharka from '../assets/cards-static/monster_kuharka.jpg';
+import monster_morovaya from '../assets/cards-static/monster_morovaya.jpg';
 import monster_nacker from '../assets/cards-static/monster_nacker.jpg';
 import monster_nightwreith from '../assets/cards-static/monster_nightwreith.jpg';
 import monster_nithraal from '../assets/cards-static/monster_nithraal.jpg';
+import monster_ruhin from '../assets/cards-static/monster_ruhin.jpg';
+import monster_sheptuha from '../assets/cards-static/monster_sheptuha.jpg';
 import monster_skolopendromorph from '../assets/cards-static/monster_skolopendromorph.jpg';
+import monster_veshuniya from '../assets/cards-static/monster_veshuniya.jpg';
 import monster_viy from '../assets/cards-static/monster_viy.jpg';
+import monster_whoknows from '../assets/cards-static/monster_whoknows.jpg';
 import monster_wildhuntwarrior from '../assets/cards-static/monster_wildhuntwarrior.jpg';
 import monster_zhagnitca from '../assets/cards-static/monster_zhagnitca.jpg';
 import nilfgaard_alba from '../assets/cards-static/nilfgaard_alba.jpg';
@@ -258,6 +269,72 @@ export const SKELLIGE_CARDS: Card[] = [
 ];
 
 export const MONSTERS_CARDS: Card[] = [
+  {
+    fraction: 'monster',
+    cost: 10,
+    value: 8,
+    image: monster_dagon,
+  },
+  {
+    fraction: 'monster',
+    cost: 10,
+    value: 13,
+    image: monster_whoknows,
+  },
+  {
+    fraction: 'monster',
+    cost: 6,
+    value: 7,
+    image: monster_bes,
+  },
+  {
+    fraction: 'monster',
+    cost: 7,
+    value: 8,
+    image: monster_hidden,
+  },
+  {
+    fraction: 'monster',
+    cost: 7,
+    value: 10,
+    image: monster_gernihora,
+  },
+  {
+    fraction: 'monster',
+    cost: 4,
+    value: 5,
+    image: monster_veshuniya,
+  },
+  {
+    fraction: 'monster',
+    cost: 4,
+    value: 5,
+    image: monster_sheptuha,
+  },
+  {
+    fraction: 'monster',
+    cost: 4,
+    value: 5,
+    image: monster_kuharka,
+  },
+  {
+    fraction: 'monster',
+    cost: 6,
+    value: 7,
+    image: monster_morovaya,
+  },
+  {
+    fraction: 'monster',
+    cost: 6,
+    value: 7,
+    image: monster_karantir,
+  },
+  {
+    fraction: 'monster',
+    cost: 7,
+    value: 8,
+    image: monster_ruhin,
+  },
   {
     fraction: 'monster',
     cost: 3,

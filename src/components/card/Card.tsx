@@ -253,7 +253,11 @@ const Card: FC<CardProps> = ({
           <div className={styles.character}>
             <img src={card.image} />
           </div>
-          <div className={styles.effect}></div>
+          <div
+            className={
+              card.rarity === 'Rare' ? styles.effect : styles.commonEffect
+            }
+          ></div>
 
           <div className={styles.cost}>
             <img className={styles.costBg} src={cost} />

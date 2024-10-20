@@ -58,12 +58,20 @@ const initialGameData: InitialGameDataType = {
 export const useGameStore = create(
   devtools<GameStore>((set, get) => ({
     ...initialGameData,
-    startGame: () =>
+    startGame: () => {
+      const currentTurn = randomTurn();
+
+      const state = get();
+
       set({
         ...initialGameData,
         isGameStarted: true,
-        currentTurn: randomTurn(),
-      }),
+        ...(currentTurn === 'Opponent'
+          ? { player: { ...state.player, money: 15 } }
+          : { enemy: { ...state.enemy, money: 15 } }),
+        currentTurn,
+      });
+    },
     takeCard: (role: Turn) => set((state) => takeCardAction(state, role)),
     setUserFraction: (fraction: Fraction) =>
       set((state) => ({

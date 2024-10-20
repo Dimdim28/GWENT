@@ -2,12 +2,14 @@ export type Fraction = 'elf' | 'monster' | 'nilfgaard' | 'north' | 'skellige';
 export type Turn = 'Player' | 'Opponent';
 export type CardStatus = 'onTable' | 'inDeck' | 'inHand' | 'inGrave';
 export type Winner = 'Player' | 'Enemy' | null;
+export type CardRarity = 'Rare' | 'Common';
 
 export type Card = {
   fraction: Fraction;
   cost: number;
   value: number;
   image: string;
+  rarity: CardRarity;
 };
 
 export type GameCard = Card & {

@@ -1,7 +1,7 @@
 :root {
   --app-height: 100%;
   --vwh: calc(1vw + 1vh);
-  --transition-time: 0.6s;
+  --transition-time: 0.5s;
 
   --title-green-color: #00794a;
 

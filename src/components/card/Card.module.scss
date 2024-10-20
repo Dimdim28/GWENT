@@ -14,7 +14,7 @@
   &.board {
     transform: rotateY(0deg);
     box-shadow: 0 0 10px transparent;
-
+    z-index: 4;
     &.canAttack {
       &:hover {
         box-shadow: 0 0 10px var(--border-blue-color);
@@ -47,12 +47,16 @@
   }
 
   &.deck {
+    z-index: 3;
+
     .card {
       transform: rotateY(180deg);
     }
   }
 
   &.hand {
+    z-index: 3;
+
     &.enemyCard {
       .card {
         transform: rotateY(180deg);
@@ -60,9 +64,9 @@
     }
     &.playerCard {
       cursor: pointer;
-
+      z-index: 5;
       &:hover {
-        z-index: 4;
+        z-index: 5;
         transform: rotate(0) !important;
         bottom: calc(0.5 * var(--vwh)) !important;
 
@@ -74,6 +78,8 @@
   }
 
   &.grave {
+    z-index: 3;
+
     .card {
       transform: rotateY(180deg);
     }
@@ -195,6 +201,7 @@
   width: 100%;
   height: 100%;
   transform: translateZ(1px);
+
 
   .character {
     position: absolute;

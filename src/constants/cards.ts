@@ -78,25 +78,47 @@ import nilfgaard_strong_cav from '../assets/cards-static/nilfgaard_strong_cav.jp
 import nilfgaard_terranova from '../assets/cards-static/nilfgaard_terranova.jpg';
 import nilfgaard_trainer from '../assets/cards-static/nilfgaard_trainer.jpg';
 import nilfgaard_vilgeforc from '../assets/cards-static/nilfgaard_vilgeforc.jpg';
+import north_adda from '../assets/cards-static/north_adda.jpg';
+import north_aedirnhammor from '../assets/cards-static/north_aedirnhammor.jpg';
+import north_anna from '../assets/cards-static/north_anna.jpg';
+import north_aretuza from '../assets/cards-static/north_aretuza.jpg';
+import north_arhigryphon from '../assets/cards-static/north_arhigryphon.jpg';
+import north_banard from '../assets/cards-static/north_banard.jpg';
 import north_bianka from '../assets/cards-static/north_bianka.jpg';
 import north_bluestripes from '../assets/cards-static/north_bluestripes.jpg';
+import north_brounhorugv from '../assets/cards-static/north_brounhorugv.jpg';
+import north_cintrainf from '../assets/cards-static/north_cintrainf.jpg';
 import north_cintraknight from '../assets/cards-static/north_cintraknight.jpg';
+import north_cursedknight from '../assets/cards-static/north_cursedknight.jpg';
 import north_demavend from '../assets/cards-static/north_demavend.jpg';
 import north_detmold from '../assets/cards-static/north_detmold.jpg';
 import north_diycstra from '../assets/cards-static/north_diycstra.jpg';
+import north_donimir from '../assets/cards-static/north_donimir.jpg';
 import north_draug from '../assets/cards-static/north_draug.jpg';
 import north_filippa from '../assets/cards-static/north_filippa.jpg';
 import north_foltest from '../assets/cards-static/north_foltest.jpg';
 import north_hencelt from '../assets/cards-static/north_hencelt.jpg';
 import north_inf from '../assets/cards-static/north_inf.jpg';
 import north_kaedvencav from '../assets/cards-static/north_kaedvencav.jpg';
+import north_kaedvensotnyk from '../assets/cards-static/north_kaedvensotnyk.jpg';
+import north_keira from '../assets/cards-static/north_keira.jpg';
+import north_kimbolt from '../assets/cards-static/north_kimbolt.jpg';
+import north_liriya from '../assets/cards-static/north_liriya.jpg';
+import north_lutic from '../assets/cards-static/north_lutic.jpg';
 import north_meva from '../assets/cards-static/north_meva.jpg';
+import north_musican from '../assets/cards-static/north_musican.jpg';
+import north_priscilla from '../assets/cards-static/north_priscilla.jpg';
 import north_radovid from '../assets/cards-static/north_radovid.jpg';
 import north_redanarch from '../assets/cards-static/north_redanarch.jpg';
+import north_redaninf from '../assets/cards-static/north_redaninf.jpg';
+import north_riviaarch from '../assets/cards-static/north_riviaarch.jpg';
 import north_roshe from '../assets/cards-static/north_roshe.jpg';
 import north_shani from '../assets/cards-static/north_shani.jpg';
 import north_sheala from '../assets/cards-static/north_sheala.jpg';
+import north_ship from '../assets/cards-static/north_ship.jpg';
 import north_tisaya from '../assets/cards-static/north_tisaya.jpg';
+import north_triadam from '../assets/cards-static/north_triadam.jpg';
+import north_wizards from '../assets/cards-static/north_wizards.jpg';
 import north_yan from '../assets/cards-static/north_yan.jpg';
 import skellige_ankrait from '../assets/cards-static/skellige_ankrait.jpg';
 import skellige_ankraitwarrrior from '../assets/cards-static/skellige_ankraitwarrrior.jpg';
@@ -120,34 +142,6 @@ import skellige_tiershach from '../assets/cards-static/skellige_tiershach.jpg';
 import skellige_tyr from '../assets/cards-static/skellige_tyr.jpg';
 
 import { Card } from './../types/general';
-
-// export const ALL_CARDS: Card[] = [
-//   {
-//     fraction: 'skellige',
-//     value: 5,
-//     image: skellige_warrior,
-//   },
-//   {
-//     fraction: 'monster',
-//     value: 6,
-//     image: harpia,
-//   },
-//   {
-//     fraction: 'north',
-//     value: 8,
-//     image: regis,
-//   },
-//   {
-//     fraction: 'elf',
-//     value: 7,
-//     image: mahakam,
-//   },
-//   {
-//     fraction: 'nilfgaard',
-//     value: 17,
-//     image: tissaya,
-//   },
-// ];
 
 const getFractionInfo = (cards: Card[]) => {
   const amount = cards.length;
@@ -323,6 +317,13 @@ export const MONSTERS_CARDS: Card[] = [
   {
     fraction: 'monster',
     rarity: 'Rare',
+    cost: 3,
+    value: 2,
+    image: monster_veshuniya,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Rare',
     cost: 10, // высокая стоимость за редкую карту
     value: 8,
     image: monster_dagon,
@@ -359,13 +360,6 @@ export const MONSTERS_CARDS: Card[] = [
     fraction: 'monster',
     rarity: 'Rare',
     cost: 3,
-    value: 2,
-    image: monster_veshuniya,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Rare',
-    cost: 3,
     value: 3,
     image: monster_sheptuha,
   },
@@ -392,20 +386,6 @@ export const MONSTERS_CARDS: Card[] = [
   },
   {
     fraction: 'monster',
-    rarity: 'Common',
-    cost: 3, // сбалансированная стоимость для обычной карты
-    value: 2,
-    image: monster_alp,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 3, // сбалансированная стоимость для обычной карты
-    value: 2,
-    image: monster_alp,
-  },
-  {
-    fraction: 'monster',
     rarity: 'Rare',
     cost: 8, // редкая карта, сбалансированная стоимость
     value: 7,
@@ -427,83 +407,6 @@ export const MONSTERS_CARDS: Card[] = [
   },
   {
     fraction: 'monster',
-    rarity: 'Common',
-    cost: 7,
-    value: 6,
-    image: monster_wildhuntcav, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 7,
-    value: 6,
-    image: monster_wildhuntcav, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 3,
-    image: monster_wildhuntconqueror, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 3,
-    image: monster_wildhuntconqueror, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 4,
-    value: 2,
-    image: monster_wildhuntinf, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 4,
-    value: 2,
-    image: monster_wildhuntinf, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 4,
-    value: 2,
-    image: monster_wildhuntinf, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 6,
-    value: 4,
-    image: monster_wildhuntnavigator, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 6,
-    value: 4,
-    image: monster_wildhuntnavigator, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2, // минимальная стоимость для обычной карты
-    value: 1,
-    image: monster_bargest,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2, // минимальная стоимость для обычной карты
-    value: 1,
-    image: monster_bargest,
-  },
-  {
-    fraction: 'monster',
     rarity: 'Rare',
     cost: 12, // максимальная стоимость для редкой карты
     value: 10,
@@ -515,188 +418,6 @@ export const MONSTERS_CARDS: Card[] = [
     cost: 9,
     value: 7,
     image: monster_eredin,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 3,
-    value: 2,
-    image: monster_foglet,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 3,
-    value: 2,
-    image: monster_foglet,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 3,
-    value: 2,
-    image: monster_ancient_foglet, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 3,
-    value: 2,
-    image: monster_ancient_foglet, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_daywreith, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_daywreith, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_daywreith, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 1,
-    value: 2,
-    image: monster_nackerweak,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 1,
-    value: 2,
-    image: monster_nackerweak,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_slaveraenelle,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_slaveraenelle,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2,
-    value: 1,
-    image: monster_syren,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2,
-    value: 1,
-    image: monster_syren,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_griphon,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_griphon,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Rare',
-    cost: 11, // высокая стоимость, сильное значение
-    value: 9,
-    image: monster_goliafr,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Rare',
-    cost: 6,
-    value: 5,
-    image: monster_grot,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 0, // интересная карта с нулевой стоимостью, но высокой ценностью
-    value: 6,
-    image: monster_harpiya,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 0, // интересная карта с нулевой стоимостью, но высокой ценностью
-    value: 6,
-    image: monster_harpiya,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Rare',
-    cost: 10,
-    value: 8,
-    image: monster_imlerikh,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Rare',
-    cost: 8,
-    value: 6,
-    image: monster_keyran,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2,
-    value: 3,
-    image: monster_nacker,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2,
-    value: 3,
-    image: monster_nacker,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
-    value: 5,
-    image: monster_nightwreith,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
-    value: 5,
-    image: monster_nightwreith,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
-    value: 5,
-    image: monster_nightwreith,
   },
   {
     fraction: 'monster',
@@ -718,6 +439,281 @@ export const MONSTERS_CARDS: Card[] = [
     cost: 10,
     value: 9,
     image: monster_viy,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Rare',
+    cost: 10,
+    value: 8,
+    image: monster_imlerikh,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Rare',
+    cost: 8,
+    value: 6,
+    image: monster_keyran,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Rare',
+    cost: 11, // высокая стоимость, сильное значение
+    value: 9,
+    image: monster_goliafr,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Rare',
+    cost: 6,
+    value: 5,
+    image: monster_grot,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3, // сбалансированная стоимость для обычной карты
+    value: 2,
+    image: monster_alp,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3, // сбалансированная стоимость для обычной карты
+    value: 2,
+    image: monster_alp,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 7,
+    value: 6,
+    image: monster_wildhuntcav, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 7,
+    value: 6,
+    image: monster_wildhuntcav, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: monster_wildhuntconqueror, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: monster_wildhuntconqueror, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: monster_wildhuntinf, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: monster_wildhuntinf, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: monster_wildhuntinf, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 6,
+    value: 4,
+    image: monster_wildhuntnavigator, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 6,
+    value: 4,
+    image: monster_wildhuntnavigator, // Добавлено
+  },
+
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2, // минимальная стоимость для обычной карты
+    value: 1,
+    image: monster_bargest,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2, // минимальная стоимость для обычной карты
+    value: 1,
+    image: monster_bargest,
+  },
+
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: monster_foglet,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: monster_foglet,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: monster_ancient_foglet, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: monster_ancient_foglet, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_daywreith, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_daywreith, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_daywreith, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 1,
+    value: 2,
+    image: monster_nackerweak,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 1,
+    value: 2,
+    image: monster_nackerweak,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_slaveraenelle,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_slaveraenelle,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: monster_syren,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: monster_syren,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_griphon,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_griphon,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 0, // интересная карта с нулевой стоимостью, но высокой ценностью
+    value: 6,
+    image: monster_harpiya,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 0, // интересная карта с нулевой стоимостью, но высокой ценностью
+    value: 6,
+    image: monster_harpiya,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: monster_nacker,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: monster_nacker,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
+    value: 5,
+    image: monster_nightwreith,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
+    value: 5,
+    image: monster_nightwreith,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
+    value: 5,
+    image: monster_nightwreith,
   },
   {
     fraction: 'monster',
@@ -753,135 +749,416 @@ export const NORTH_CARDS: Card[] = [
   {
     fraction: 'north',
     rarity: 'Rare',
-    cost: 5,
-    value: 4,
-    image: north_bluestripes,
-  },
-  {
-    fraction: 'north',
-    rarity: 'Rare',
-    cost: 7,
-    value: 6,
-    image: north_cintraknight,
-  },
-  {
-    fraction: 'north',
-    rarity: 'Rare',
-    cost: 9,
+    cost: 10,
     value: 8,
     image: north_demavend,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
-    cost: 8,
-    value: 7,
+    cost: 10, // редкая карта со сниженной стоимостью
+    value: 13,
     image: north_detmold,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
-    cost: 4,
-    value: 3,
+    cost: 6,
+    value: 7,
     image: north_diycstra,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
-    cost: 6,
-    value: 5,
+    cost: 7, // умеренная стоимость за редкую карту
+    value: 8,
     image: north_draug,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
-    cost: 10,
-    value: 9,
+    cost: 8, // высокая стоимость за редкую карту
+    value: 10,
     image: north_filippa,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
-    cost: 12,
-    value: 10,
+    cost: 3,
+    value: 3,
     image: north_foltest,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
-    cost: 5,
+    cost: 3,
     value: 4,
     image: north_hencelt,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
-    cost: 2,
-    value: 1,
-    image: north_inf,
-  },
-  {
-    fraction: 'north',
-    rarity: 'Rare',
     cost: 6,
-    value: 5,
-    image: north_kaedvencav,
-  },
-  {
-    fraction: 'north',
-    rarity: 'Rare',
-    cost: 7,
-    value: 6,
-    image: north_meva,
-  },
-  {
-    fraction: 'north',
-    rarity: 'Rare',
-    cost: 9,
-    value: 8,
+    value: 7,
     image: north_radovid,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
-    cost: 4,
-    value: 3,
-    image: north_redanarch,
+    cost: 7,
+    value: 8,
+    image: north_roshe,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
     cost: 8,
     value: 7,
-    image: north_roshe,
+    image: north_shani,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
     cost: 10,
     value: 9,
-    image: north_shani,
-  },
-  {
-    fraction: 'north',
-    rarity: 'Rare',
-    cost: 3,
-    value: 2,
     image: north_sheala,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
-    cost: 11,
-    value: 10,
+    cost: 6,
+    value: 7,
     image: north_tisaya,
   },
   {
     fraction: 'north',
     rarity: 'Rare',
+    cost: 12, // максимальная стоимость для редкой карты
+    value: 10,
+    image: north_yan,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Rare',
+    cost: 9,
+    value: 7,
+    image: north_adda,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Rare',
+    cost: 9,
+    value: 8,
+    image: north_anna,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Rare',
+    cost: 12,
+    value: 10,
+    image: north_arhigryphon,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Rare',
+    cost: 10,
+    value: 9,
+    image: north_donimir,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Rare',
+    cost: 10,
+    value: 8,
+    image: north_keira,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Rare',
+    cost: 8,
+    value: 6,
+    image: north_kimbolt,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Rare',
+    cost: 11,
+    value: 9,
+    image: north_lutic,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Rare',
+    cost: 6,
+    value: 5,
+    image: north_priscilla,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Rare',
+    cost: 3,
+    value: 4,
+    image: north_meva,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: north_bluestripes,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: north_bluestripes,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
     cost: 7,
     value: 6,
-    image: north_yan,
+    image: north_cintraknight,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 7,
+    value: 6,
+    image: north_cintraknight,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: north_inf,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: north_inf,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: north_kaedvencav,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: north_kaedvencav,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: north_redanarch,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: north_redanarch,
+  },
+
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: north_aedirnhammor,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: north_aedirnhammor,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: north_aedirnhammor,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: north_aretuza,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: north_aretuza,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: north_banard,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: north_banard,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: north_banard,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: north_brounhorugv,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: north_cintrainf,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: north_cintrainf,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 4,
+    value: 3,
+    image: north_cursedknight,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 4,
+    value: 3,
+    image: north_cursedknight,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: north_kaedvensotnyk,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: north_kaedvensotnyk,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 1,
+    value: 2,
+    image: north_liriya,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 1,
+    value: 2,
+    image: north_liriya,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: north_musican,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: north_musican,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: north_redaninf,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: north_redaninf,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: north_riviaarch,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: north_riviaarch,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 0,
+    value: 6,
+    image: north_triadam,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 0,
+    value: 6,
+    image: north_triadam,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 6,
+    value: 5,
+    image: north_ship,
+  },
+  {
+    fraction: 'north',
+    rarity: 'Common',
+    cost: 8,
+    value: 2,
+    image: north_wizards,
   },
 ];
 
@@ -1171,4 +1448,5 @@ export const NILFGAARD_CARDS: Card[] = [
   },
 ];
 
-console.log(getFractionInfo(MONSTERS_CARDS));
+console.log('monsters', getFractionInfo(MONSTERS_CARDS));
+console.log('north', getFractionInfo(NORTH_CARDS));

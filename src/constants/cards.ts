@@ -1,20 +1,39 @@
-import elfs_brovven from '../assets/cards-static/elfs_brovven.jpg';
-import elfs_dava from '../assets/cards-static/elfs_dava.jpg';
-import elfs_dolblatanna from '../assets/cards-static/elfs_dolblatanna.jpg';
+import elfs_aeliren from '../assets/cards-static/elfs_aeliren.jpg';
+import elfs_aevin from '../assets/cards-static/elfs_aevin.jpg';
+import elfs_anglayissa from '../assets/cards-static/elfs_anglayissa.jpg';
+import elfs_aukvenn from '../assets/cards-static/elfs_aukvenn.jpg';
+import elfs_brayen from '../assets/cards-static/elfs_brayen.jpg';
+import elfs_broover from '../assets/cards-static/elfs_broover.jpg';
+import elfs_dana from '../assets/cards-static/elfs_dana.jpg';
+import elfs_diversant from '../assets/cards-static/elfs_diversant.jpg';
+import elfs_dolblatannawatcher from '../assets/cards-static/elfs_dolblatannawatcher.jpg';
+import elfs_dolblatannawizard from '../assets/cards-static/elfs_dolblatannawizard.jpg';
 import elfs_driada from '../assets/cards-static/elfs_driada.jpg';
+import elfs_dubovik from '../assets/cards-static/elfs_dubovik.jpg';
+import elfs_eleas from '../assets/cards-static/elfs_eleas.jpg';
+import elfs_filavandarel from '../assets/cards-static/elfs_filavandarel.jpg';
 import elfs_findabair from '../assets/cards-static/elfs_findabair.jpg';
-import elfs_mahakam from '../assets/cards-static/elfs_mahakam.jpg';
+import elfs_ida from '../assets/cards-static/elfs_ida.jpg';
+import elfs_izengrim from '../assets/cards-static/elfs_izengrim.jpg';
+import elfs_mahakamdefender from '../assets/cards-static/elfs_mahakamdefender.jpg';
+import elfs_mahakammaroder from '../assets/cards-static/elfs_mahakammaroder.jpg';
+import elfs_mahakamwarriors from '../assets/cards-static/elfs_mahakamwarriors.jpg';
+import elfs_mahakamwatch from '../assets/cards-static/elfs_mahakamwatch.jpg';
+import elfs_milayen from '../assets/cards-static/elfs_milayen.jpg';
 import elfs_milva from '../assets/cards-static/elfs_milva.jpg';
-import elfs_oackritters from '../assets/cards-static/elfs_oackritters.jpg';
+import elfs_panther from '../assets/cards-static/elfs_panther.jpg';
+import elfs_redmenduelant from '../assets/cards-static/elfs_redmenduelant.jpg';
 import elfs_saskiya from '../assets/cards-static/elfs_saskiya.jpg';
-import elfs_sheldon from '../assets/cards-static/elfs_sheldon.jpg';
 import elfs_shirru from '../assets/cards-static/elfs_shirru.jpg';
-import elfs_skrimmeyster from '../assets/cards-static/elfs_skrimmeyster.jpg';
-import elfs_sukkub from '../assets/cards-static/elfs_sukkub.jpg';
+import elfs_simlas from '../assets/cards-static/elfs_simlas.jpg';
+import elfs_sworddancer from '../assets/cards-static/elfs_sworddancer.jpg';
 import elfs_swordmaster from '../assets/cards-static/elfs_swordmaster.jpg';
-import elfs_vernosiell from '../assets/cards-static/elfs_vernosiell.jpg';
-import elfs_volounteer from '../assets/cards-static/elfs_volounteer.jpg';
-import elfs_vrihhed from '../assets/cards-static/elfs_vrihhed.jpg';
+import elfs_teleanin from '../assets/cards-static/elfs_teleanin.jpg';
+import elfs_tree from '../assets/cards-static/elfs_tree.jpg';
+import elfs_vernosiel from '../assets/cards-static/elfs_vernosiel.jpg';
+import elfs_vernosielwarrior from '../assets/cards-static/elfs_vernosielwarrior.jpg';
+import elfs_wrihhed from '../assets/cards-static/elfs_wrihhed.jpg';
+import elfs_wrihhedcav from '../assets/cards-static/elfs_wrihhedcav.jpg';
 import elfs_yarpen from '../assets/cards-static/elfs_yarpen.jpg';
 import elfs_yorvet from '../assets/cards-static/elfs_yorvet.jpg';
 import elfs_zoltan from '../assets/cards-static/elfs_zoltan.jpg';
@@ -470,271 +489,269 @@ export const MONSTERS_CARDS: Card[] = [
   },
   {
     fraction: 'monster',
-    rarity: 'Common',
-    cost: 3, // сбалансированная стоимость для обычной карты
-    value: 2,
-    image: monster_alp,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 3, // сбалансированная стоимость для обычной карты
-    value: 2,
-    image: monster_alp,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 7,
-    value: 6,
-    image: monster_wildhuntcav, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 7,
-    value: 6,
-    image: monster_wildhuntcav, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 3,
-    image: monster_wildhuntconqueror, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 3,
-    image: monster_wildhuntconqueror, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 4,
-    value: 2,
-    image: monster_wildhuntinf, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 4,
-    value: 2,
-    image: monster_wildhuntinf, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 4,
-    value: 2,
-    image: monster_wildhuntinf, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 6,
-    value: 4,
-    image: monster_wildhuntnavigator, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 6,
-    value: 4,
-    image: monster_wildhuntnavigator, // Добавлено
-  },
-
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2, // минимальная стоимость для обычной карты
-    value: 1,
-    image: monster_bargest,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2, // минимальная стоимость для обычной карты
-    value: 1,
-    image: monster_bargest,
-  },
-
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 3,
-    value: 2,
-    image: monster_foglet,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 3,
-    value: 2,
-    image: monster_foglet,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 3,
-    value: 2,
-    image: monster_ancient_foglet, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 3,
-    value: 2,
-    image: monster_ancient_foglet, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_daywreith, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_daywreith, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_daywreith, // Добавлено
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 1,
-    value: 2,
-    image: monster_nackerweak,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 1,
-    value: 2,
-    image: monster_nackerweak,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_slaveraenelle,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_slaveraenelle,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2,
-    value: 1,
-    image: monster_syren,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2,
-    value: 1,
-    image: monster_syren,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_griphon,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 5,
-    value: 4,
-    image: monster_griphon,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 0, // интересная карта с нулевой стоимостью, но высокой ценностью
-    value: 6,
-    image: monster_harpiya,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 0, // интересная карта с нулевой стоимостью, но высокой ценностью
-    value: 6,
-    image: monster_harpiya,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2,
-    value: 3,
-    image: monster_nacker,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 2,
-    value: 3,
-    image: monster_nacker,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
-    value: 5,
-    image: monster_nightwreith,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
-    value: 5,
-    image: monster_nightwreith,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
-    value: 5,
-    image: monster_nightwreith,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 4,
-    value: 3,
-    image: monster_wildhuntwarrior,
-  },
-  {
-    fraction: 'monster',
-    rarity: 'Common',
-    cost: 4,
-    value: 3,
-    image: monster_wildhuntwarrior,
-  },
-  {
-    fraction: 'monster',
     rarity: 'Rare',
     cost: 6,
     value: 5,
     image: monster_zhagnitca,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3, // сбалансированная стоимость для обычной карты
+    value: 2,
+    image: monster_alp,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3, // сбалансированная стоимость для обычной карты
+    value: 2,
+    image: monster_alp,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 7,
+    value: 6,
+    image: monster_wildhuntcav, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 7,
+    value: 6,
+    image: monster_wildhuntcav, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: monster_wildhuntconqueror, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: monster_wildhuntconqueror, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: monster_wildhuntinf, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: monster_wildhuntinf, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: monster_wildhuntinf, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 6,
+    value: 4,
+    image: monster_wildhuntnavigator, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 6,
+    value: 4,
+    image: monster_wildhuntnavigator, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2, // минимальная стоимость для обычной карты
+    value: 1,
+    image: monster_bargest,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2, // минимальная стоимость для обычной карты
+    value: 1,
+    image: monster_bargest,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: monster_foglet,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: monster_foglet,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: monster_ancient_foglet, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: monster_ancient_foglet, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_daywreith, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_daywreith, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_daywreith, // Добавлено
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 1,
+    value: 2,
+    image: monster_nackerweak,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 1,
+    value: 2,
+    image: monster_nackerweak,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_slaveraenelle,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_slaveraenelle,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: monster_syren,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: monster_syren,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_griphon,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: monster_griphon,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 0, // интересная карта с нулевой стоимостью, но высокой ценностью
+    value: 6,
+    image: monster_harpiya,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 0, // интересная карта с нулевой стоимостью, но высокой ценностью
+    value: 6,
+    image: monster_harpiya,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: monster_nacker,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: monster_nacker,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
+    value: 5,
+    image: monster_nightwreith,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
+    value: 5,
+    image: monster_nightwreith,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 7, // выше стоимость для обычной карты, но сбалансировано по силе
+    value: 5,
+    image: monster_nightwreith,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 4,
+    value: 3,
+    image: monster_wildhuntwarrior,
+  },
+  {
+    fraction: 'monster',
+    rarity: 'Common',
+    cost: 4,
+    value: 3,
+    image: monster_wildhuntwarrior,
   },
 ];
 
@@ -1135,14 +1152,14 @@ export const NORTH_CARDS: Card[] = [
   {
     fraction: 'north',
     rarity: 'Common',
-    cost: 0,
+    cost: 3,
     value: 6,
     image: north_triadam,
   },
   {
     fraction: 'north',
     rarity: 'Common',
-    cost: 0,
+    cost: 3,
     value: 6,
     image: north_triadam,
   },
@@ -1156,7 +1173,7 @@ export const NORTH_CARDS: Card[] = [
   {
     fraction: 'north',
     rarity: 'Common',
-    cost: 8,
+    cost: 2,
     value: 2,
     image: north_wizards,
   },
@@ -1166,142 +1183,422 @@ export const ELF_CARDS: Card[] = [
   {
     fraction: 'elf',
     rarity: 'Rare',
-    cost: 5,
-    value: 7,
-    image: elfs_mahakam,
+    cost: 3,
+    value: 2,
+    image: elfs_dana,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 10,
+    value: 8,
+    image: elfs_saskiya,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 10,
+    value: 13,
+    image: elfs_teleanin,
   },
   {
     fraction: 'elf',
     rarity: 'Rare',
     cost: 6,
+    value: 7,
+    image: elfs_aukvenn,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 7,
     value: 8,
     image: elfs_zoltan,
   },
   {
     fraction: 'elf',
     rarity: 'Rare',
-    cost: 4,
-    value: 6,
-    image: elfs_brovven,
+    cost: 8,
+    value: 10,
+    image: elfs_simlas,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 3,
+    value: 3,
+    image: elfs_tree,
   },
   {
     fraction: 'elf',
     rarity: 'Rare',
     cost: 3,
     value: 4,
-    image: elfs_dava,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 2,
-    value: 3,
-    image: elfs_dolblatanna,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 7,
-    value: 9,
-    image: elfs_driada,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 5,
-    value: 6,
-    image: elfs_findabair,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 8,
-    value: 10,
-    image: elfs_milva,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 4,
-    value: 5,
-    image: elfs_oackritters,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 9,
-    value: 11,
-    image: elfs_saskiya,
+    image: elfs_broover,
   },
   {
     fraction: 'elf',
     rarity: 'Rare',
     cost: 6,
     value: 7,
-    image: elfs_sheldon,
+    image: elfs_vernosiel,
   },
   {
     fraction: 'elf',
     rarity: 'Rare',
     cost: 7,
     value: 8,
-    image: elfs_shirru,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 3,
-    value: 4,
-    image: elfs_skrimmeyster,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 2,
-    value: 3,
-    image: elfs_sukkub,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 5,
-    value: 6,
-    image: elfs_swordmaster,
+    image: elfs_milva,
   },
   {
     fraction: 'elf',
     rarity: 'Rare',
     cost: 8,
+    value: 7,
+    image: elfs_findabair,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 10,
     value: 9,
-    image: elfs_vernosiell,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 1,
-    value: 2,
-    image: elfs_volounteer,
-  },
-  {
-    fraction: 'elf',
-    rarity: 'Rare',
-    cost: 4,
-    value: 5,
-    image: elfs_vrihhed,
+    image: elfs_shirru,
   },
   {
     fraction: 'elf',
     rarity: 'Rare',
     cost: 6,
     value: 7,
+    image: elfs_yorvet,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 12,
+    value: 10,
     image: elfs_yarpen,
   },
   {
     fraction: 'elf',
     rarity: 'Rare',
     cost: 9,
+    value: 7,
+    image: elfs_anglayissa,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 9,
+    value: 8,
+    image: elfs_eleas,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 12,
     value: 10,
-    image: elfs_yorvet,
+    image: elfs_milayen,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 10,
+    value: 9,
+    image: elfs_izengrim,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 10,
+    value: 8,
+    image: elfs_aeliren,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 8,
+    value: 6,
+    image: elfs_filavandarel,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 11,
+    value: 9,
+    image: elfs_ida,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 8,
+    value: 5,
+    image: elfs_aevin,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Rare',
+    cost: 6,
+    value: 5,
+    image: elfs_brayen,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: elfs_dolblatannawizard,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: elfs_dolblatannawizard,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 6,
+    image: elfs_mahakammaroder,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 6,
+    image: elfs_mahakammaroder,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: elfs_wrihhed,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: elfs_wrihhed,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: elfs_dolblatannawatcher,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: elfs_dolblatannawatcher,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: elfs_dolblatannawatcher,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 6,
+    value: 4,
+    image: elfs_swordmaster,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 6,
+    value: 4,
+    image: elfs_swordmaster,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: elfs_driada,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: elfs_driada,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: elfs_mahakamwarriors,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: elfs_mahakamwarriors,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: elfs_mahakamwarriors,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: elfs_mahakamwarriors,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: elfs_vernosielwarrior,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: elfs_vernosielwarrior,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: elfs_vernosielwarrior,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 2,
+    value: 2,
+    image: elfs_mahakamdefender,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 2,
+    value: 2,
+    image: elfs_mahakamdefender,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: elfs_sworddancer,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: elfs_sworddancer,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: elfs_wrihhedcav,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: elfs_wrihhedcav,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: elfs_panther,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: elfs_panther,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 0,
+    value: 6,
+    image: elfs_diversant,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 0,
+    value: 6,
+    image: elfs_diversant,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: elfs_mahakamwatch,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: elfs_mahakamwatch,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: elfs_dubovik,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: elfs_dubovik,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: elfs_dubovik,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 4,
+    value: 3,
+    image: elfs_redmenduelant,
+  },
+  {
+    fraction: 'elf',
+    rarity: 'Common',
+    cost: 4,
+    value: 3,
+    image: elfs_redmenduelant,
   },
 ];
 
@@ -1450,3 +1747,4 @@ export const NILFGAARD_CARDS: Card[] = [
 
 console.log('monsters', getFractionInfo(MONSTERS_CARDS));
 console.log('north', getFractionInfo(NORTH_CARDS));
+console.log('elfs', getFractionInfo(ELF_CARDS));

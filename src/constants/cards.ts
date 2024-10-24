@@ -139,26 +139,41 @@ import north_tisaya from '../assets/cards-static/north_tisaya.jpg';
 import north_triadam from '../assets/cards-static/north_triadam.jpg';
 import north_wizards from '../assets/cards-static/north_wizards.jpg';
 import north_yan from '../assets/cards-static/north_yan.jpg';
-import skellige_ankrait from '../assets/cards-static/skellige_ankrait.jpg';
-import skellige_ankraitwarrrior from '../assets/cards-static/skellige_ankraitwarrrior.jpg';
+import skellige_ankraitdefender from '../assets/cards-static/skellige_ankraitdefender.jpg';
+import skellige_ankraitdrakkar from '../assets/cards-static/skellige_ankraitdrakkar.jpg';
+import skellige_ankraitman from '../assets/cards-static/skellige_ankraitman.jpg';
+import skellige_ankraitmaroder from '../assets/cards-static/skellige_ankraitmaroder.jpg';
 import skellige_bear from '../assets/cards-static/skellige_bear.jpg';
 import skellige_berserk from '../assets/cards-static/skellige_berserk.jpg';
-import skellige_brideofsea from '../assets/cards-static/skellige_brideofsea.jpg';
-import skellige_crow from '../assets/cards-static/skellige_crow.jpg';
-import skellige_drakkar from '../assets/cards-static/skellige_drakkar.jpg';
-import skellige_druid from '../assets/cards-static/skellige_druid.jpg';
-import skellige_drummond from '../assets/cards-static/skellige_drummond.jpg';
-import skellige_hemdal from '../assets/cards-static/skellige_hemdal.jpg';
-import skellige_hyalmar from '../assets/cards-static/skellige_hyalmar.jpg';
+import skellige_birna from '../assets/cards-static/skellige_birna.jpg';
+import skellige_bluelugos from '../assets/cards-static/skellige_bluelugos.jpg';
+import skellige_brann from '../assets/cards-static/skellige_brann.jpg';
+import skellige_crowmother from '../assets/cards-static/skellige_crowmother.jpg';
+import skellige_donar from '../assets/cards-static/skellige_donar.jpg';
+import skellige_drummonddefender from '../assets/cards-static/skellige_drummonddefender.jpg';
+import skellige_drummonddrakar from '../assets/cards-static/skellige_drummonddrakar.jpg';
+import skellige_drummondguard from '../assets/cards-static/skellige_drummondguard.jpg';
+import skellige_heilmdal from '../assets/cards-static/skellige_heilmdal.jpg';
+import skellige_hialmar from '../assets/cards-static/skellige_hialmar.jpg';
+import skellige_ingvar from '../assets/cards-static/skellige_ingvar.jpg';
 import skellige_keris from '../assets/cards-static/skellige_keris.jpg';
-import skellige_koral from '../assets/cards-static/skellige_koral.jpg';
+import skellige_knut from '../assets/cards-static/skellige_knut.jpg';
+import skellige_korall from '../assets/cards-static/skellige_korall.jpg';
+import skellige_krah from '../assets/cards-static/skellige_krah.jpg';
 import skellige_lugos from '../assets/cards-static/skellige_lugos.jpg';
-import skellige_melluzine from '../assets/cards-static/skellige_melluzine.jpg';
+import skellige_meluzina from '../assets/cards-static/skellige_meluzina.jpg';
+import skellige_olaf from '../assets/cards-static/skellige_olaf.jpg';
+import skellige_seabride from '../assets/cards-static/skellige_seabride.jpg';
+import skellige_sigvald from '../assets/cards-static/skellige_sigvald.jpg';
+import skellige_skyal from '../assets/cards-static/skellige_skyal.jpg';
 import skellige_svalblod from '../assets/cards-static/skellige_svalblod.jpg';
-import skellige_svalblodwarrior from '../assets/cards-static/skellige_svalblodwarrior.jpg';
-import skellige_threeeyes from '../assets/cards-static/skellige_threeeyes.jpg';
-import skellige_tiershach from '../assets/cards-static/skellige_tiershach.jpg';
-import skellige_tyr from '../assets/cards-static/skellige_tyr.jpg';
+import skellige_swalblodberserk from '../assets/cards-static/skellige_swalblodberserk.jpg';
+import skellige_swalblodkiller from '../assets/cards-static/skellige_swalblodkiller.jpg';
+import skellige_tirshahdefender from '../assets/cards-static/skellige_tirshahdefender.jpg';
+import skellige_tirshahwarrior from '../assets/cards-static/skellige_tirshahwarrior.jpg';
+import skellige_ulfredin from '../assets/cards-static/skellige_ulfredin.jpg';
+import skellige_uta from '../assets/cards-static/skellige_uta.jpg';
+import skellige_vildkarl from '../assets/cards-static/skellige_vildkarl.jpg';
 
 import { Card } from './../types/general';
 
@@ -193,142 +208,424 @@ export const SKELLIGE_CARDS: Card[] = [
   {
     fraction: 'skellige',
     rarity: 'Rare',
-    cost: 5,
-    value: 3,
-    image: skellige_ankrait,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 7,
-    value: 4,
-    image: skellige_ankraitwarrrior,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 4,
+    cost: 3,
     value: 2,
     image: skellige_bear,
   },
   {
     fraction: 'skellige',
     rarity: 'Rare',
+    cost: 10,
+    value: 8,
+    image: skellige_birna,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 10,
+    value: 13,
+    image: skellige_bluelugos,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
     cost: 6,
-    value: 4,
-    image: skellige_berserk,
+    value: 7,
+    image: skellige_brann,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 7,
+    value: 8,
+    image: skellige_crowmother,
   },
   {
     fraction: 'skellige',
     rarity: 'Rare',
     cost: 8,
-    value: 6,
-    image: skellige_brideofsea,
+    value: 10,
+    image: skellige_donar,
   },
   {
     fraction: 'skellige',
     rarity: 'Rare',
     cost: 3,
-    value: 2,
-    image: skellige_crow,
+    value: 3,
+    image: skellige_heilmdal,
+  },
+
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 3,
+    value: 4,
+    image: skellige_ingvar,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 6,
+    value: 7,
+    image: skellige_knut,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 7,
+    value: 8,
+    image: skellige_korall,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 8,
+    value: 7,
+    image: skellige_krah,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 10,
+    value: 9,
+    image: skellige_lugos,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 6,
+    value: 7,
+    image: skellige_meluzina,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 12,
+    value: 10,
+    image: skellige_olaf,
   },
   {
     fraction: 'skellige',
     rarity: 'Rare',
     cost: 9,
     value: 7,
-    image: skellige_drakkar,
+    image: skellige_seabride,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 9,
+    value: 8,
+    image: skellige_sigvald,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 12,
+    value: 10,
+    image: skellige_skyal,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 10,
+    value: 9,
+    image: skellige_svalblod,
   },
   {
     fraction: 'skellige',
     rarity: 'Rare',
     cost: 10,
     value: 8,
-    image: skellige_druid,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 6,
-    value: 5,
-    image: skellige_drummond,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 12,
-    value: 9,
-    image: skellige_hemdal,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 11,
-    value: 8,
-    image: skellige_hyalmar,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 9,
-    value: 6,
-    image: skellige_keris,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 7,
-    value: 5,
-    image: skellige_koral,
+    image: skellige_ulfredin,
   },
   {
     fraction: 'skellige',
     rarity: 'Rare',
     cost: 8,
     value: 6,
-    image: skellige_lugos,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 14,
-    value: 10,
-    image: skellige_melluzine,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 10,
-    value: 8,
-    image: skellige_svalblod,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 7,
-    value: 5,
-    image: skellige_svalblodwarrior,
-  },
-  {
-    fraction: 'skellige',
-    rarity: 'Rare',
-    cost: 5,
-    value: 4,
-    image: skellige_threeeyes,
+    image: skellige_uta,
   },
   {
     fraction: 'skellige',
     rarity: 'Rare',
     cost: 11,
     value: 9,
-    image: skellige_tiershach,
+    image: skellige_vildkarl,
   },
   {
     fraction: 'skellige',
     rarity: 'Rare',
-    cost: 13,
-    value: 10,
-    image: skellige_tyr,
+    cost: 6,
+    value: 5,
+    image: skellige_keris,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Rare',
+    cost: 6,
+    value: 5,
+    image: skellige_hialmar,
+  },
+
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: skellige_ankraitdefender,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: skellige_ankraitdefender,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 7,
+    value: 6,
+    image: skellige_ankraitdrakkar,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 7,
+    value: 6,
+    image: skellige_ankraitdrakkar,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: skellige_ankraitman,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: skellige_ankraitman,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: skellige_ankraitmaroder,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: skellige_ankraitmaroder,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: skellige_ankraitmaroder,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 6,
+    value: 4,
+    image: skellige_drummonddefender,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 6,
+    value: 4,
+    image: skellige_drummonddefender,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: skellige_drummonddrakar,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: skellige_drummonddrakar,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: skellige_drummondguard,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: skellige_drummondguard,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: skellige_berserk,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: skellige_berserk,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: skellige_swalblodberserk,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: skellige_swalblodberserk,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: skellige_swalblodberserk,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 1,
+    value: 2,
+    image: skellige_swalblodkiller,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 1,
+    value: 2,
+    image: skellige_swalblodkiller,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: skellige_tirshahdefender,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: skellige_tirshahdefender,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: skellige_tirshahwarrior,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: skellige_tirshahwarrior,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: skellige_tirshahwarrior,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: skellige_tirshahwarrior,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 0,
+    value: 6,
+    image: skellige_ankraitdefender,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 0,
+    value: 6,
+    image: skellige_ankraitdefender,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: skellige_ankraitman,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: skellige_ankraitman,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: skellige_drummonddrakar,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: skellige_drummonddrakar,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: skellige_drummonddrakar,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 4,
+    value: 3,
+    image: skellige_drummondguard,
+  },
+  {
+    fraction: 'skellige',
+    rarity: 'Common',
+    cost: 4,
+    value: 3,
+    image: skellige_drummondguard,
   },
 ];
 
@@ -1748,3 +2045,4 @@ export const NILFGAARD_CARDS: Card[] = [
 console.log('monsters', getFractionInfo(MONSTERS_CARDS));
 console.log('north', getFractionInfo(NORTH_CARDS));
 console.log('elfs', getFractionInfo(ELF_CARDS));
+console.log('skellige', getFractionInfo(SKELLIGE_CARDS));

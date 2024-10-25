@@ -77,26 +77,46 @@ import monster_wildhuntinf from '../assets/cards-static/monster_wildhuntinf.jpg'
 import monster_wildhuntnavigator from '../assets/cards-static/monster_wildhuntnavigator.jpg';
 import monster_wildhuntwarrior from '../assets/cards-static/monster_wildhuntwarrior.jpg';
 import monster_zhagnitca from '../assets/cards-static/monster_zhagnitca.jpg';
-import nilfgaard_alba from '../assets/cards-static/nilfgaard_alba.jpg';
+import nilfgaard_affan from '../assets/cards-static/nilfgaard_affan.jpg';
+import nilfgaard_albaflagshtock from '../assets/cards-static/nilfgaard_albaflagshtock.jpg';
+import nilfgaard_albahunters from '../assets/cards-static/nilfgaard_albahunters.jpg';
+import nilfgaard_albapikeman from '../assets/cards-static/nilfgaard_albapikeman.jpg';
+import nilfgaard_albashield from '../assets/cards-static/nilfgaard_albashield.jpg';
+import nilfgaard_ardfeainlightcav from '../assets/cards-static/nilfgaard_ardfeainlightcav.jpg';
 import nilfgaard_assire from '../assets/cards-static/nilfgaard_assire.jpg';
-import nilfgaard_catapult from '../assets/cards-static/nilfgaard_catapult.jpg';
-import nilfgaard_cavalerry from '../assets/cards-static/nilfgaard_cavalerry.jpg';
+import nilfgaard_curier from '../assets/cards-static/nilfgaard_curier.jpg';
+import nilfgaard_daerlancrossbow from '../assets/cards-static/nilfgaard_daerlancrossbow.jpg';
+import nilfgaard_dagge from '../assets/cards-static/nilfgaard_dagge.jpg';
 import nilfgaard_damien from '../assets/cards-static/nilfgaard_damien.jpg';
+import nilfgaard_derido from '../assets/cards-static/nilfgaard_derido.jpg';
 import nilfgaard_emgyr from '../assets/cards-static/nilfgaard_emgyr.jpg';
-import nilfgaard_fringiliya from '../assets/cards-static/nilfgaard_fringiliya.jpg';
+import nilfgaard_ffion from '../assets/cards-static/nilfgaard_ffion.jpg';
+import nilfgaard_fighters from '../assets/cards-static/nilfgaard_fighters.jpg';
+import nilfgaard_glynnis from '../assets/cards-static/nilfgaard_glynnis.jpg';
+import nilfgaard_horsecrossbowas from '../assets/cards-static/nilfgaard_horsecrossbowas.jpg';
 import nilfgaard_impera from '../assets/cards-static/nilfgaard_impera.jpg';
-import nilfgaard_inf from '../assets/cards-static/nilfgaard_inf.jpg';
-import nilfgaard_killer from '../assets/cards-static/nilfgaard_killer.jpg';
-import nilfgaard_peyrak from '../assets/cards-static/nilfgaard_peyrak.jpg';
-import nilfgaard_poison from '../assets/cards-static/nilfgaard_poison.jpg';
-import nilfgaard_riens from '../assets/cards-static/nilfgaard_riens.jpg';
-import nilfgaard_search from '../assets/cards-static/nilfgaard_search.jpg';
-import nilfgaard_shield from '../assets/cards-static/nilfgaard_shield.jpg';
+import nilfgaard_kagur from '../assets/cards-static/nilfgaard_kagur.jpg';
+import nilfgaard_koegorn from '../assets/cards-static/nilfgaard_koegorn.jpg';
+import nilfgaard_magna from '../assets/cards-static/nilfgaard_magna.jpg';
+import nilfgaard_milton from '../assets/cards-static/nilfgaard_milton.jpg';
+import nilfgaard_nauzeka from '../assets/cards-static/nilfgaard_nauzeka.jpg';
+import nilfgaard_nauzekasergant from '../assets/cards-static/nilfgaard_nauzekasergant.jpg';
+import nilfgaard_palmerin from '../assets/cards-static/nilfgaard_palmerin.jpg';
+import nilfgaard_ramon from '../assets/cards-static/nilfgaard_ramon.jpg';
+import nilfgaard_rience from '../assets/cards-static/nilfgaard_rience.jpg';
+import nilfgaard_shilard from '../assets/cards-static/nilfgaard_shilard.jpg';
 import nilfgaard_skellen from '../assets/cards-static/nilfgaard_skellen.jpg';
-import nilfgaard_strong_cav from '../assets/cards-static/nilfgaard_strong_cav.jpg';
+import nilfgaard_slavehunter from '../assets/cards-static/nilfgaard_slavehunter.jpg';
 import nilfgaard_terranova from '../assets/cards-static/nilfgaard_terranova.jpg';
-import nilfgaard_trainer from '../assets/cards-static/nilfgaard_trainer.jpg';
+import nilfgaard_tibor from '../assets/cards-static/nilfgaard_tibor.jpg';
+import nilfgaard_torus from '../assets/cards-static/nilfgaard_torus.jpg';
+import nilfgaard_turtle from '../assets/cards-static/nilfgaard_turtle.jpg';
+import nilfgaard_varatre from '../assets/cards-static/nilfgaard_varatre.jpg';
+import nilfgaard_venendal from '../assets/cards-static/nilfgaard_venendal.jpg';
+import nilfgaard_vigo from '../assets/cards-static/nilfgaard_vigo.jpg';
 import nilfgaard_vilgeforc from '../assets/cards-static/nilfgaard_vilgeforc.jpg';
+import nilfgaard_vrygreheff from '../assets/cards-static/nilfgaard_vrygreheff.jpg';
+import nilfgaard_warrior from '../assets/cards-static/nilfgaard_warrior.jpg';
 import north_adda from '../assets/cards-static/north_adda.jpg';
 import north_aedirnhammor from '../assets/cards-static/north_aedirnhammor.jpg';
 import north_anna from '../assets/cards-static/north_anna.jpg';
@@ -1903,142 +1923,422 @@ export const NILFGAARD_CARDS: Card[] = [
   {
     fraction: 'nilfgaard',
     rarity: 'Rare',
-    cost: 4,
-    value: 6,
-    image: nilfgaard_alba,
+    cost: 3,
+    value: 2,
+    image: nilfgaard_affan,
   },
   {
     fraction: 'nilfgaard',
     rarity: 'Rare',
-    cost: 3,
-    value: 5,
+    cost: 10,
+    value: 8,
     image: nilfgaard_assire,
   },
   {
     fraction: 'nilfgaard',
     rarity: 'Rare',
-    cost: 5,
-    value: 8,
-    image: nilfgaard_catapult,
+    cost: 10,
+    value: 13,
+    image: nilfgaard_dagge,
   },
   {
     fraction: 'nilfgaard',
     rarity: 'Rare',
     cost: 6,
-    value: 9,
-    image: nilfgaard_cavalerry,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 8,
-    value: 12,
+    value: 7,
     image: nilfgaard_damien,
   },
   {
     fraction: 'nilfgaard',
     rarity: 'Rare',
-    cost: 9,
-    value: 13,
+    cost: 7,
+    value: 8,
+    image: nilfgaard_derido,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 8,
+    value: 10,
     image: nilfgaard_emgyr,
   },
   {
     fraction: 'nilfgaard',
     rarity: 'Rare',
     cost: 3,
-    value: 4,
-    image: nilfgaard_fringiliya,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 7,
-    value: 10,
-    image: nilfgaard_impera,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 2,
     value: 3,
-    image: nilfgaard_inf,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 5,
-    value: 7,
-    image: nilfgaard_killer,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 6,
-    value: 9,
-    image: nilfgaard_peyrak,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 4,
-    value: 5,
-    image: nilfgaard_poison,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 8,
-    value: 11,
-    image: nilfgaard_riens,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 2,
-    value: 4,
-    image: nilfgaard_search,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 5,
-    value: 8,
-    image: nilfgaard_shield,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 6,
-    value: 9,
-    image: nilfgaard_skellen,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 9,
-    value: 13,
-    image: nilfgaard_strong_cav,
-  },
-  {
-    fraction: 'nilfgaard',
-    rarity: 'Rare',
-    cost: 7,
-    value: 10,
-    image: nilfgaard_terranova,
+    image: nilfgaard_ffion,
   },
   {
     fraction: 'nilfgaard',
     rarity: 'Rare',
     cost: 3,
     value: 4,
-    image: nilfgaard_trainer,
+    image: nilfgaard_glynnis,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 6,
+    value: 7,
+    image: nilfgaard_kagur,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 7,
+    value: 8,
+    image: nilfgaard_koegorn,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 8,
+    value: 7,
+    image: nilfgaard_milton,
   },
   {
     fraction: 'nilfgaard',
     rarity: 'Rare',
     cost: 10,
-    value: 15,
+    value: 9,
+    image: nilfgaard_palmerin,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 6,
+    value: 7,
+    image: nilfgaard_ramon,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 12,
+    value: 10,
+    image: nilfgaard_rience,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 9,
+    value: 7,
+    image: nilfgaard_shilard,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 9,
+    value: 8,
+    image: nilfgaard_skellen,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 12,
+    value: 10,
+    image: nilfgaard_terranova,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 10,
+    value: 9,
+    image: nilfgaard_tibor,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 10,
+    value: 8,
+    image: nilfgaard_torus,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 8,
+    value: 6,
+    image: nilfgaard_varatre,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 11,
+    value: 9,
+    image: nilfgaard_vigo,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 6,
+    value: 5,
     image: nilfgaard_vilgeforc,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Rare',
+    cost: 6,
+    value: 5,
+    image: nilfgaard_vrygreheff,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: nilfgaard_albaflagshtock,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: nilfgaard_albaflagshtock,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 7,
+    value: 6,
+    image: nilfgaard_albahunters,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 7,
+    value: 6,
+    image: nilfgaard_albahunters,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: nilfgaard_albapikeman,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 5,
+    value: 3,
+    image: nilfgaard_albapikeman,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: nilfgaard_albashield,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: nilfgaard_albashield,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 4,
+    value: 2,
+    image: nilfgaard_albashield,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 6,
+    value: 4,
+    image: nilfgaard_curier,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 6,
+    value: 4,
+    image: nilfgaard_curier,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: nilfgaard_daerlancrossbow,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: nilfgaard_daerlancrossbow,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: nilfgaard_fighters,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: nilfgaard_fighters,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: nilfgaard_horsecrossbowas,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 3,
+    value: 2,
+    image: nilfgaard_horsecrossbowas,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: nilfgaard_impera,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: nilfgaard_impera,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: nilfgaard_impera,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 1,
+    value: 2,
+    image: nilfgaard_magna,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 1,
+    value: 2,
+    image: nilfgaard_magna,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: nilfgaard_nauzeka,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: nilfgaard_nauzeka,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: nilfgaard_nauzekasergant,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 2,
+    value: 1,
+    image: nilfgaard_nauzekasergant,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: nilfgaard_slavehunter,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 5,
+    value: 4,
+    image: nilfgaard_slavehunter,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 0,
+    value: 6,
+    image: nilfgaard_turtle,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 0,
+    value: 6,
+    image: nilfgaard_turtle,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: nilfgaard_venendal,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 2,
+    value: 3,
+    image: nilfgaard_venendal,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: nilfgaard_warrior,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: nilfgaard_warrior,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 7,
+    value: 5,
+    image: nilfgaard_warrior,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 4,
+    value: 3,
+    image: nilfgaard_ardfeainlightcav,
+  },
+  {
+    fraction: 'nilfgaard',
+    rarity: 'Common',
+    cost: 4,
+    value: 3,
+    image: nilfgaard_ardfeainlightcav,
   },
 ];
 
@@ -2046,3 +2346,4 @@ console.log('monsters', getFractionInfo(MONSTERS_CARDS));
 console.log('north', getFractionInfo(NORTH_CARDS));
 console.log('elfs', getFractionInfo(ELF_CARDS));
 console.log('skellige', getFractionInfo(SKELLIGE_CARDS));
+console.log('nilfgaard', getFractionInfo(NILFGAARD_CARDS));

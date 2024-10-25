@@ -1,8 +1,9 @@
 .cardContainer {
   width: calc(var(--vwh) * 6);
   height: calc(var(--vwh) * 9);
-  perspective: calc(var(--vwh) * 9);
+  perspective: calc(var(--vwh) * 200);
   position: absolute;
+  transform-style: preserve-3d;
   transition:
     box-shadow var(--transition-time) ease,
     transform var(--transition-time) ease,
@@ -56,6 +57,9 @@
 
   &.hand {
     z-index: 3;
+    filter: none;
+    opacity: 1;
+    backface-visibility: visible;
 
     &.enemyCard {
       .card {
@@ -132,7 +136,6 @@
   width: inherit;
   height: inherit;
   transform-style: preserve-3d;
-  will-change: transform;
   transition: transform var(--transition-time) ease;
 }
 
@@ -344,4 +347,20 @@
   border-color: var(--border-green-color);
   border-radius: 4px;
   transition: opacity var(--transition-time) ease-in-out;
+}
+
+.cardContainer,
+.card,
+.side {
+  will-change: transform;
+}
+
+.side,
+.cardContainer,
+.card {
+  backface-visibility: hidden;
+}
+
+.card img {
+  image-rendering: crisp-edges;
 }

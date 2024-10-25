@@ -46,13 +46,14 @@
 
 .cards {
   display: flex;
+  justify-content: center;
   width: 100%;
   gap: calc(var(--vwh) * 2);
 }
 
 .card {
   height: auto;
-  flex-grow: 1;
+  width: calc(var(--vwh) * 10);
   cursor: pointer;
   transition: transform var(--transition-time) linear;
 

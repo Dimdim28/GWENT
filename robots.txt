@@ -1,0 +1,13 @@
+# robots.txt for Vite + React Web App
+
+User-agent: *
+Disallow: /static/
+Disallow: /assets/
+Disallow: /api/
+Disallow: /private/
+
+# Allow access to all public pages
+Allow: /
+
+# Sitemap location (update this to your actual sitemap URL)
+Sitemap: https://yourdomain.com/sitemap.xml

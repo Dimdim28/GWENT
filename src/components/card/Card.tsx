@@ -251,7 +251,7 @@ const Card: FC<CardProps> = ({
       <div className={styles.card}>
         <div className={classNames(styles.side, styles.front)}>
           <div className={styles.character}>
-            <img src={card.image} />
+            <img src={card.image} alt="card" />
           </div>
           <div
             className={
@@ -260,18 +260,18 @@ const Card: FC<CardProps> = ({
           ></div>
 
           <div className={styles.cost}>
-            <img className={styles.costBg} src={cost} />
+            <img className={styles.costBg} src={cost} alt="cost" />
             <p className={styles.costText}>{card.cost}</p>
           </div>
 
           <div className={styles.power}>
             <div className={styles.powerEffect}></div>
-            <img className={styles.powerBg} src={points} />
+            <img className={styles.powerBg} src={points} alt="points" />
             <p className={styles.powerText}>{card.value}</p>
           </div>
         </div>
         <div className={classNames(styles.side, styles.back)}>
-          <img src={back} className={styles.backBg} />
+          <img src={back} className={styles.backBg} alt="card-back" />
         </div>
         <div className={classNames(styles.side, styles.right)}></div>
         <div className={classNames(styles.side, styles.left)}></div>

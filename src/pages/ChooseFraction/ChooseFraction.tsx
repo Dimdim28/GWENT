@@ -57,6 +57,7 @@ export const ChooseFraction = () => {
                 }}
               >
                 <img
+                  alt="fraction"
                   onMouseEnter={() => {
                     const audio = new Audio();
 

@@ -108,6 +108,7 @@ export const Game = () => {
         <div className={styles.content}>
           <div className={classNames(styles.userInfo, styles.enemy)}>
             <img
+              alt="fraction"
               className={styles.fractionIcon}
               src={getFractionLogo(enemy.fraction)}
             />
@@ -118,6 +119,7 @@ export const Game = () => {
           </div>
           <div className={classNames(styles.userInfo, styles.player)}>
             <img
+              alt="fraction"
               className={styles.fractionIcon}
               src={getFractionLogo(player.fraction)}
             />

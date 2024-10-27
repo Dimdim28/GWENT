@@ -52,6 +52,8 @@ export const endTurnAction = async (
     return {
       currentTurn: newTurn,
       winner,
+      player: { ...state.player, points: 0 },
+      enemy: { ...state.enemy, points: 0 },
     };
   }
 

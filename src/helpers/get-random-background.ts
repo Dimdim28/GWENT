@@ -1,19 +1,18 @@
-import bg1 from '../assets/background/background-1.jpg';
-import bg2 from '../assets/background/background-2.png';
-import bg3 from '../assets/background/background-3.png';
-import bg4 from '../assets/background/background-4.png';
-import bg5 from '../assets/background/background-5.png';
-import bg6 from '../assets/background/background-6.png';
-import bg7 from '../assets/background/background-7.png';
-import bg8 from '../assets/background/background-8.png';
-import bg9 from '../assets/background/background-9.png';
-import bg10 from '../assets/background/background-10.png';
-import bg11 from '../assets/background/background-11.png';
-import bg12 from '../assets/background/background-12.png';
-import bg13 from '../assets/background/background-13.png';
-import bg14 from '../assets/background/background-14.png';
+const backgrounds = [
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106281/image_2023-12-23_21-16-30_s3ohoe.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106281/image_2023-12-23_21-10-27_fcrkom.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106281/image_2023-12-23_20-02-45_iklhj6.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106281/image_2023-12-14_21-22-47_ck4bj1.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106281/image_2023-12-20_14-50-01_rlsuzn.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106280/image_2023-12-13_17-59-16_mw7zeb.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106280/image_2023-12-04_22-59-31_urf3rh.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106280/image_2023-12-02_23-52-07_xofgpa.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106280/image_2023-11-30_23-55-48_ba6nfi.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106280/image_2023-11-19_23-09-31_zlbs4p.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106280/image_2023-12-01_20-43-48_ikotsv.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106279/image_2023-11-16_22-23-33_gftdts.png',
+  'https://res.cloudinary.com/dvvekoit4/image/upload/v1730106279/image_2023-12-01_00-28-15_iylr0g.png',
+];
 
 export const getRandomBackground = () =>
-  [bg1, bg2, bg3, bg4, bg5, bg6, bg7, bg8, bg9, bg10, bg11, bg12, bg13, bg14][
-    Math.floor(Math.random() * 14)
-  ];
+  backgrounds[Math.floor(Math.random() * backgrounds.length)];
